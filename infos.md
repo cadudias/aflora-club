@@ -1,0 +1,10 @@
+[22:03, 28/04/2026] Ricardo Dias: Aflora Club foi criada por dois especialistas em agricultura urbana, combinando todo conhecimento técnico das ciências agrárias e experiência na área com a paixão pela agricultura sustentável, para atender um público criativo e exigente.
+[22:03, 28/04/2026] Ricardo Dias: Valorizamos a elevada qualidade dos nossos produtos. Todas as nossas flores são colhidas uma à uma no dia da entrega, garantindo que cada flor chegue no auge de frescor e beleza nas suas mãos.
+[22:03, 28/04/2026] Ricardo Dias: Nossas flores são colhidas sob demanda para preservar cada detalhe. Por isso, as entregas acontecem sempre um dia após a confirmação do pedido. Você pode receber de segunda à sábado (aqui não sei como escrever que não atendemos na quinta kk)
+[22:03, 28/04/2026] Ricardo Dias: Entre nossos produtos, temos o Mix de flores sazonais, contendo cerca de 20 flores sortidas. R$20
+[22:03, 28/04/2026] Ricardo Dias: Você pode montar seu pack personalizado, dentro no nosso catálogo de flores disponíveis. Ex: somente flores rosas, somente tagete. R$22
+[22:03, 28/04/2026] Ricardo Dias: (a gente também tem panc, mas nunca divulgamos kkk que é azedinha e peixinho da horta)
+[22:03, 28/04/2026] Ricardo Dias: Nossas espécies disponíveis no momento são: cravina, amor perfeito, crisântemo, clitoria, boca de leão, tagete, primavera, begônia, sininho, zínia, de variadas cores e tamanhos. Trabalhamos com PANC'S: peixinho da horta e azedinha - e estamos sempre expandindo!
+[22:03, 28/04/2026] Ricardo Dias: Atendemos toda Porto Alegre.  O valor da tele é calculado por quilometragem, nos consulte.
+[22:03, 28/04/2026] Ricardo Dias: Trabalhamos com condições especiais de valores para pedidos fixos semanais ou pedidos acima de 4 packs.
+[22:03, 28/04/2026] Ricardo Dias: Você pode fazer sua encomenda via WhatsApp ou então é só nos mandar um e-mail e encomendar quantos packs quiser. (olaahflora@gmail.com)

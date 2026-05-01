@@ -1,0 +1,1468 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aflora Club | V7 Taste</title>
+    <meta
+      name="description"
+      content="Aflora Club: flores comestiveis para restaurantes, cafes e hoteis."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Manrope:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-950: #121516;
+        --text-100: #f1efe8;
+        --text-300: #d1ccbf;
+        --line-200: rgba(255, 255, 255, 0.26);
+        --accent: #d2c6ab;
+        --depo-gap: 3px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        min-height: 100%;
+      }
+
+      body {
+        font-family: "Manrope", sans-serif;
+        background: var(--bg-950);
+        color: var(--text-100);
+        overflow-x: hidden;
+      }
+
+      .container {
+        width: min(1320px, calc(100% - 4rem));
+        margin: 0 auto;
+      }
+
+      .hero {
+        position: relative;
+        min-height: 100dvh;
+        isolation: isolate;
+        background:
+          linear-gradient(
+            112deg,
+            rgba(8, 12, 12, 0.82) 7%,
+            rgba(8, 12, 12, 0.62) 38%,
+            rgba(8, 12, 12, 0.46) 55%,
+            rgba(8, 12, 12, 0.74) 100%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(8, 12, 12, 0.2) 0%,
+            rgba(8, 12, 12, 0.75) 100%
+          );
+      }
+
+      .hero-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -3;
+        filter: saturate(72%) contrast(92%) brightness(68%);
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        background: radial-gradient(
+          60% 75% at 74% 48%,
+          rgba(196, 179, 147, 0.17) 0%,
+          rgba(196, 179, 147, 0.04) 35%,
+          rgba(8, 12, 12, 0) 74%
+        );
+      }
+
+      .hero-rings {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .hero-rings::before,
+      .hero-rings::after {
+        content: "";
+        position: absolute;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        border-radius: 50%;
+      }
+
+      .hero-rings::before {
+        width: min(79vw, 920px);
+        aspect-ratio: 1 / 1;
+        right: -10vw;
+        top: 7vh;
+      }
+
+      .hero-rings::after {
+        width: min(84vw, 1040px);
+        aspect-ratio: 1 / 1;
+        right: -16vw;
+        top: 2vh;
+        opacity: 0.62;
+      }
+
+      .site-header {
+        position: absolute;
+        inset: 0 0 auto 0;
+        z-index: 3;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        background: linear-gradient(
+          to bottom,
+          rgba(8, 12, 12, 0.5),
+          rgba(8, 12, 12, 0)
+        );
+      }
+
+      .nav-wrap {
+        min-height: 88px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-left: 0.6rem;
+        text-decoration: none;
+      }
+
+      .brand-logo {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid rgba(241, 239, 232, 0.72);
+      }
+
+      .brand-name {
+        font-family: "Outfit", sans-serif;
+        font-size: 1.95rem;
+        font-weight: 300;
+        letter-spacing: 0.2em;
+        text-transform: lowercase;
+        color: rgba(241, 239, 232, 0.95);
+      }
+
+      .brand-club {
+        color: #c768f1;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        font-family: "Outfit", sans-serif;
+        font-size: 0.8rem;
+        letter-spacing: 0.09em;
+        color: rgba(241, 239, 232, 0.88);
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .nav-links a:hover,
+      .nav-links a:focus-visible {
+        color: var(--accent);
+        outline: none;
+      }
+
+      .hero-content {
+        min-height: 100dvh;
+        display: grid;
+        align-content: center;
+        padding-top: 8.6rem;
+        padding-bottom: 5rem;
+      }
+
+      .hero-copy {
+        max-width: 680px;
+        margin-left: clamp(0rem, 5vw, 4.5rem);
+      }
+
+      .hero-kicker {
+        font-family: "Outfit", sans-serif;
+        font-size: 0.74rem;
+        letter-spacing: 0.17em;
+        text-transform: uppercase;
+        color: rgba(241, 239, 232, 0.7);
+      }
+
+      h1 {
+        margin-top: 1.1rem;
+        font-family: "Outfit", sans-serif;
+        font-size: clamp(2.2rem, 5.1vw, 4.9rem);
+        line-height: 1.02;
+        font-weight: 300;
+        letter-spacing: 0.01em;
+        color: rgba(241, 239, 232, 0.98);
+        max-width: 15ch;
+        text-wrap: balance;
+      }
+
+      .hero-subtitle {
+        margin-top: 1.3rem;
+        max-width: 46ch;
+        font-size: clamp(0.94rem, 1.1vw, 1.06rem);
+        color: var(--text-300);
+        line-height: 1.58;
+      }
+
+      .hero-actions {
+        margin-top: 2.35rem;
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+      }
+
+      .btn {
+        border: 1px solid var(--line-200);
+        border-radius: 999px;
+        min-width: 176px;
+        padding: 0.78rem 1.35rem;
+        text-decoration: none;
+        text-align: center;
+        color: var(--text-100);
+        font-size: 0.74rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        backdrop-filter: blur(5px);
+        transition:
+          transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+          border-color 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+          background-color 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .btn:hover,
+      .btn:focus-visible {
+        transform: translateY(-1px);
+        border-color: rgba(210, 198, 171, 0.78);
+        outline: none;
+      }
+
+      .btn:active {
+        transform: scale(0.98);
+      }
+
+      .btn-primary {
+        background: rgba(210, 198, 171, 0.2);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.17);
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      }
+
+      .join-tag {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 4;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.95rem 1.2rem;
+        background: rgba(8, 12, 12, 0.88);
+        color: rgba(241, 239, 232, 0.9);
+        text-decoration: none;
+        font-family: "Outfit", sans-serif;
+        font-size: 0.74rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+        border-right: 1px solid rgba(255, 255, 255, 0.14);
+      }
+
+      .join-tag span {
+        font-size: 0.88rem;
+        line-height: 1;
+      }
+
+      .about-section {
+        position: relative;
+        background: #eef5e7;
+        color: #234527;
+        border-top: 1px solid rgba(35, 69, 39, 0.12);
+        overflow: hidden;
+      }
+
+      .about-wrap {
+        width: min(1320px, calc(100% - 4rem));
+        margin: 0 auto;
+        padding: clamp(4rem, 8vw, 6rem) 0;
+        display: grid;
+        grid-template-columns: 1.05fr 1fr;
+        gap: clamp(2rem, 6vw, 5rem);
+        align-items: center;
+      }
+
+      .about-media {
+        position: relative;
+        min-height: clamp(390px, 46vw, 640px);
+      }
+
+      .about-photo {
+        position: absolute;
+        border-radius: 1rem;
+        border: 10px solid #ffffff;
+        box-shadow: 0 22px 45px rgba(27, 56, 31, 0.18);
+        object-fit: cover;
+      }
+
+      .about-photo--one {
+        width: clamp(200px, 28.6vw, 346px);
+        aspect-ratio: 3 / 4;
+        left: 6%;
+        bottom: 4%;
+        transform: rotate(-15deg);
+      }
+
+      .about-photo--two {
+        width: clamp(186px, 25.5vw, 306px);
+        aspect-ratio: 3 / 4;
+        left: 24%;
+        top: -1%;
+        z-index: 2;
+        transform: rotate(8deg);
+      }
+
+      .about-photo--three {
+        width: clamp(191px, 27.3vw, 328px);
+        aspect-ratio: 3 / 4;
+        right: 12%;
+        bottom: 6%;
+        transform: rotate(12deg);
+      }
+
+      .about-copy {
+        max-width: 62ch;
+      }
+
+      .about-kicker {
+        font-family: "Outfit", sans-serif;
+        font-size: 0.74rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(35, 69, 39, 0.74);
+      }
+
+      .about-title {
+        margin-top: 0.8rem;
+        font-family: "Outfit", sans-serif;
+        font-size: clamp(1.8rem, 3.4vw, 3rem);
+        line-height: 1.06;
+        letter-spacing: 0.01em;
+        color: #1d3a1f;
+      }
+
+      .about-text {
+        margin-top: 1rem;
+        font-size: clamp(0.98rem, 1.08vw, 1.1rem);
+        line-height: 1.66;
+        color: rgba(35, 69, 39, 0.92);
+      }
+
+      .about-text + .about-text {
+        margin-top: 1rem;
+      }
+
+      .about-cta {
+        margin-top: 1.9rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+        padding: 0.78rem 1.2rem;
+        border-radius: 999px;
+        background: #234527;
+        color: #eef5e7;
+        text-decoration: none;
+        font-family: "Outfit", sans-serif;
+        font-size: 0.74rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .about-cta:hover,
+      .about-cta:focus-visible {
+        transform: translateY(-1px);
+        outline: none;
+      }
+
+      .packs-section {
+        background: #0d6f74;
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+        color: #f4eee6;
+      }
+
+      .packs-wrap {
+        width: min(1320px, calc(100% - 4rem));
+        margin: 0 auto;
+        padding: clamp(4rem, 8vw, 5.8rem) 0;
+      }
+
+      .packs-kicker {
+        font-family: "Outfit", sans-serif;
+        font-size: 0.74rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(244, 238, 230, 0.74);
+      }
+
+      .packs-title {
+        margin-top: 0.72rem;
+        font-family: "Outfit", sans-serif;
+        font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+        line-height: 1.06;
+        letter-spacing: 0.01em;
+      }
+
+      .packs-sub {
+        margin-top: 0.95rem;
+        max-width: 68ch;
+        color: rgba(244, 238, 230, 0.82);
+        line-height: 1.62;
+      }
+
+      .packs-grid {
+        margin-top: 2.1rem;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .pack-card {
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        background: rgba(20, 14, 13, 0.22);
+        min-height: 100%;
+      }
+
+      .pack-card__photo-wrap {
+        position: relative;
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+      }
+
+      .pack-card__photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(92%) brightness(86%);
+      }
+
+      .pack-card__body {
+        padding: 1.05rem 1rem 1rem;
+      }
+
+      .pack-card__name {
+        font-family: "Outfit", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        font-size: 1.02rem;
+      }
+
+      .pack-card__desc {
+        margin-top: 0.5rem;
+        color: rgba(244, 238, 230, 0.8);
+        line-height: 1.52;
+      }
+
+      .pack-card__footer {
+        margin-top: 0.95rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .pack-card__price {
+        font-family: "Outfit", sans-serif;
+        letter-spacing: 0.02em;
+        font-size: 1.08rem;
+      }
+
+      .pack-card__cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255, 255, 255, 0.36);
+        padding: 0.62rem 0.9rem;
+        text-decoration: none;
+        font-family: "Outfit", sans-serif;
+        font-size: 0.68rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #f4eee6;
+        transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .pack-card__cta:hover,
+      .pack-card__cta:focus-visible {
+        border-color: rgba(255, 255, 255, 0.65);
+        background: rgba(255, 255, 255, 0.08);
+        outline: none;
+      }
+
+      .packs-custom {
+        margin-top: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+        color: rgba(244, 238, 230, 0.9);
+      }
+
+      .packs-custom p {
+        line-height: 1.55;
+        max-width: 64ch;
+      }
+
+      .packs-note {
+        margin-top: 1rem;
+        color: rgba(244, 238, 230, 0.76);
+        line-height: 1.58;
+      }
+
+      .packs-v2 {
+        background: #f3f8ef;
+        color: #1f4d2f;
+        border-top: 1px solid rgba(31, 77, 47, 0.14);
+      }
+
+      .packs-v2__wrap {
+        width: min(1320px, calc(100% - 4rem));
+        margin: 0 auto;
+        padding: clamp(4rem, 8vw, 6rem) 0;
+      }
+
+      .packs-v2__head {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: clamp(1.5rem, 4vw, 3rem);
+        align-items: center;
+      }
+
+      .packs-v2__kicker {
+        font-family: "Outfit", sans-serif;
+        font-size: 0.74rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(31, 77, 47, 0.68);
+      }
+
+      .packs-v2__title {
+        margin-top: 0.6rem;
+        font-family: "Outfit", sans-serif;
+        font-size: clamp(2rem, 4vw, 3.7rem);
+        line-height: 0.98;
+        letter-spacing: -0.01em;
+      }
+
+      .packs-v2__lead {
+        font-size: clamp(1rem, 1.1vw, 1.12rem);
+        line-height: 1.65;
+        color: rgba(31, 77, 47, 0.9);
+      }
+
+      .packs-v2__list {
+        margin-top: 2.1rem;
+        display: grid;
+        gap: 1rem;
+      }
+
+      .packs-v2__card {
+        display: grid;
+        grid-template-columns: minmax(180px, 320px) 1fr;
+        border: 1px solid rgba(31, 77, 47, 0.18);
+        background: #f8fcf4;
+      }
+
+      .packs-v2__photo-wrap {
+        min-height: 220px;
+        border-right: 1px solid rgba(31, 77, 47, 0.14);
+      }
+
+      .packs-v2__photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .packs-v2__body {
+        padding: 1rem 1.15rem;
+      }
+
+      .packs-v2__name {
+        font-family: "Outfit", sans-serif;
+        font-size: 1.1rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      .packs-v2__meta {
+        margin-top: 0.5rem;
+        display: grid;
+        grid-template-columns: 1.6fr 0.6fr 0.6fr;
+        border-top: 1px solid rgba(31, 77, 47, 0.2);
+        border-bottom: 1px solid rgba(31, 77, 47, 0.2);
+      }
+
+      .packs-v2__meta > div {
+        padding: 0.62rem 0.5rem;
+      }
+
+      .packs-v2__meta > div + div {
+        border-left: 1px solid rgba(31, 77, 47, 0.2);
+        text-align: center;
+      }
+
+      .packs-v2__label {
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(31, 77, 47, 0.66);
+      }
+
+      .packs-v2__value {
+        margin-top: 0.2rem;
+        font-family: "Outfit", sans-serif;
+        font-size: 0.96rem;
+      }
+
+      .packs-v2__desc {
+        margin-top: 0.72rem;
+        line-height: 1.58;
+        color: rgba(31, 77, 47, 0.88);
+      }
+
+      .packs-v2__cta {
+        margin-top: 0.8rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.62rem 0.95rem;
+        background: #1f4d2f;
+        border: 1px solid #1f4d2f;
+        color: #f3f8ef;
+        text-decoration: none;
+        font-family: "Outfit", sans-serif;
+        font-size: 0.68rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .packs-v2__cta:hover,
+      .packs-v2__cta:focus-visible {
+        transform: translateY(-1px);
+        outline: none;
+      }
+
+      .depo-section {
+        position: relative;
+        background:
+          linear-gradient(180deg, rgba(18, 27, 20, 0.88), rgba(18, 27, 20, 0.88)),
+          url("images/IMG_1902.JPG") center / cover no-repeat;
+        color: #edf4e8;
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+      }
+
+      .depo-wrap {
+        width: min(1320px, calc(100% - 4rem));
+        margin: 0 auto;
+        padding: clamp(4rem, 8vw, 5.4rem) 0;
+      }
+
+      .depo-head {
+        text-align: center;
+      }
+
+      .depo-kicker {
+        font-family: "Outfit", sans-serif;
+        font-size: 0.74rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(237, 244, 232, 0.7);
+      }
+
+      .depo-title {
+        margin-top: 0.7rem;
+        font-family: "Outfit", sans-serif;
+        font-size: clamp(2rem, 4.2vw, 3.7rem);
+        line-height: 0.95;
+        letter-spacing: -0.01em;
+        text-transform: uppercase;
+      }
+
+      /* Grid explícito: até 3 colunas; masonry no Firefox compacta linhas quando houver */
+      .depo-grid {
+        margin-top: 1.25rem;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-auto-flow: row;
+        gap: var(--depo-gap);
+        width: 100%;
+        align-items: start;
+        align-content: start;
+      }
+
+      .depo-item {
+        margin: 0;
+        overflow: hidden;
+        line-height: 0;
+        background: transparent;
+        min-width: 0;
+      }
+
+      .depo-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* depo6 na última linha, coluna do meio (após reordenar: 1–5, depo9, depo6) */
+      @media (min-width: 981px) {
+        .depo-item--center-row {
+          grid-column: 2;
+          justify-self: stretch;
+        }
+      }
+
+      @media (min-width: 641px) and (max-width: 980px) {
+        .depo-item--center-row {
+          grid-column: 1 / -1;
+          justify-self: center;
+          width: min(100%, calc((100% - var(--depo-gap)) / 2));
+        }
+      }
+
+      @media (max-width: 640px) {
+        .depo-item--center-row {
+          grid-column: auto;
+          justify-self: stretch;
+          width: 100%;
+        }
+      }
+
+      .site-footer {
+        background: #131a16;
+        color: #edf4e8;
+        border-top: 1px solid rgba(237, 244, 232, 0.16);
+      }
+
+      .footer-wrap {
+        width: min(1320px, calc(100% - 4rem));
+        margin: 0 auto;
+        padding: clamp(3rem, 7vw, 4.5rem) 0 1.2rem;
+      }
+
+      .footer-top {
+        display: grid;
+        grid-template-columns: 1.15fr 1fr;
+        gap: clamp(1.2rem, 4vw, 3rem);
+        align-items: start;
+      }
+
+      .footer-brand {
+        font-family: "Outfit", sans-serif;
+        font-size: clamp(2rem, 4.4vw, 3.8rem);
+        letter-spacing: 0.02em;
+        line-height: 0.95;
+      }
+
+      .footer-tagline {
+        margin-top: 0.7rem;
+        max-width: 52ch;
+        color: rgba(237, 244, 232, 0.78);
+        line-height: 1.6;
+      }
+
+      .footer-cards {
+        margin-top: 1.6rem;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.9rem;
+      }
+
+      .footer-card {
+        border: 1px solid rgba(237, 244, 232, 0.17);
+        background: rgba(237, 244, 232, 0.04);
+        padding: 0.95rem;
+      }
+
+      .footer-card__label {
+        font-family: "Outfit", sans-serif;
+        font-size: 0.7rem;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: rgba(237, 244, 232, 0.62);
+      }
+
+      .footer-card__text {
+        margin-top: 0.55rem;
+        line-height: 1.58;
+        color: rgba(237, 244, 232, 0.9);
+      }
+
+      .footer-contact {
+        border: 1px solid rgba(237, 244, 232, 0.2);
+        background: rgba(237, 244, 232, 0.03);
+        padding: 1rem;
+      }
+
+      .footer-contact__title {
+        font-family: "Outfit", sans-serif;
+        font-size: 0.78rem;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: rgba(237, 244, 232, 0.68);
+      }
+
+      .footer-contact__text {
+        margin-top: 0.6rem;
+        line-height: 1.6;
+      }
+
+      .footer-actions {
+        margin-top: 0.95rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+      }
+
+      .footer-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        padding: 0.62rem 0.95rem;
+        font-family: "Outfit", sans-serif;
+        font-size: 0.68rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border: 1px solid rgba(237, 244, 232, 0.35);
+        color: #edf4e8;
+        background: transparent;
+        transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .footer-btn:hover,
+      .footer-btn:focus-visible {
+        transform: translateY(-1px);
+        outline: none;
+        border-color: rgba(237, 244, 232, 0.72);
+      }
+
+      .footer-btn--primary {
+        background: #295c38;
+        border-color: #295c38;
+      }
+
+      .footer-bottom {
+        margin-top: 1.2rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(237, 244, 232, 0.14);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem 1.2rem;
+        align-items: center;
+        justify-content: space-between;
+        color: rgba(237, 244, 232, 0.62);
+        font-size: 0.84rem;
+      }
+
+      @media (max-width: 980px) {
+        .container {
+          width: calc(100% - 2rem);
+        }
+
+        .nav-links {
+          gap: 1.1rem;
+        }
+
+        .hero-content {
+          padding-top: 6.7rem;
+        }
+
+        .hero-copy {
+          margin-left: 0;
+          max-width: 620px;
+        }
+
+        .hero-rings::before {
+          width: min(98vw, 780px);
+          right: -38vw;
+          top: 14vh;
+        }
+
+        .hero-rings::after {
+          width: min(108vw, 860px);
+          right: -45vw;
+          top: 8vh;
+        }
+
+        .about-wrap {
+          width: calc(100% - 2rem);
+          grid-template-columns: 1fr;
+          gap: 2.2rem;
+        }
+
+        .packs-wrap {
+          width: calc(100% - 2rem);
+        }
+
+        .packs-v2__wrap {
+          width: calc(100% - 2rem);
+        }
+
+        .depo-wrap {
+          width: calc(100% - 2rem);
+        }
+
+        .depo-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: var(--depo-gap);
+        }
+
+        .footer-wrap {
+          width: calc(100% - 2rem);
+        }
+
+        .packs-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .packs-v2__head {
+          grid-template-columns: 1fr;
+        }
+
+        .packs-v2__card {
+          grid-template-columns: 1fr;
+        }
+
+        .packs-v2__photo-wrap {
+          min-height: 250px;
+          border-right: none;
+          border-bottom: 1px solid rgba(31, 77, 47, 0.14);
+        }
+
+        .footer-top {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-cards {
+          grid-template-columns: 1fr;
+        }
+
+        .about-media {
+          min-height: 390px;
+          max-width: 560px;
+        }
+
+        .about-photo--one {
+          left: 7%;
+        }
+
+        .about-photo--two {
+          left: 24%;
+        }
+
+        .about-photo--three {
+          right: 11%;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .brand {
+          font-size: 1.55rem;
+          letter-spacing: 0.16em;
+        }
+
+        .nav-links li:first-child {
+          display: none;
+        }
+
+        h1 {
+          max-width: 14ch;
+        }
+
+        .hero-actions {
+          flex-direction: column;
+          align-items: stretch;
+          width: min(290px, 100%);
+        }
+
+        .btn {
+          min-width: 0;
+          width: 100%;
+        }
+
+        .join-tag {
+          padding: 0.82rem 1rem;
+        }
+
+        .about-media {
+          min-height: 320px;
+        }
+
+        .about-photo {
+          border-width: 7px;
+        }
+
+        .about-photo--one {
+          width: 42%;
+          left: 8%;
+          bottom: 4%;
+        }
+
+        .about-photo--two {
+          width: 40%;
+          left: 24%;
+          top: -1%;
+        }
+
+        .about-photo--three {
+          width: 40%;
+          right: 12%;
+          bottom: 8%;
+        }
+
+        .packs-custom {
+          align-items: stretch;
+        }
+
+        .pack-card__cta {
+          width: 100%;
+        }
+
+        .packs-v2__meta {
+          grid-template-columns: 1fr;
+        }
+
+        .packs-v2__meta > div + div {
+          border-left: none;
+          border-top: 1px solid rgba(31, 77, 47, 0.2);
+          text-align: left;
+        }
+
+        .depo-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .footer-btn {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="hero" id="inicio">
+      <video
+        class="hero-video"
+        src="hero-imgs/magnific_use-this-image-as-the-bas_2886030875.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        aria-hidden="true"
+      ></video>
+      <div class="hero-rings" aria-hidden="true"></div>
+
+      <header class="site-header">
+        <div class="container nav-wrap">
+          <a class="brand" href="#" aria-label="aflora.club">
+            <img class="brand-logo" src="images/logo.png" alt="Logo Aflora Club" />
+            <span class="brand-name">aflora<span class="brand-club">.club</span></span>
+          </a>
+
+          <ul class="nav-links" aria-label="Menu principal">
+            <li><a href="#packs">Packs</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <p class="hero-kicker">Um momento para desacelerar</p>
+          <h1>Sabores vivos comecam no respiro da natureza</h1>
+          <p class="hero-subtitle">
+            Flores comestiveis cultivadas sob demanda para cozinhas que tratam
+            cada prato como uma experiencia memoravel.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#packs">Baixar catalogo</a>
+            <a
+              class="btn btn-secondary"
+              href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20Quero%20fazer%20um%20pedido%20de%20flores%20comest%C3%ADveis."
+              target="_blank"
+              rel="noopener noreferrer"
+              >Falar no WhatsApp</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <a class="join-tag" href="#contato"><span>x</span> Entrar na lista</a>
+    </main>
+
+    <section class="about-section" id="sobre">
+      <div class="about-wrap">
+        <div class="about-media" aria-hidden="true">
+          <img
+            class="about-photo about-photo--one"
+            src="images/4310562C-3BA9-4FB1-898F-8F01B6D6E369.jpg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            class="about-photo about-photo--two"
+            src="images/84BA5229-A515-4CAB-BAE3-8BA9A4F962D1_Original.JPG"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            class="about-photo about-photo--three"
+            src="images/d46895ec-c065-48d8-bbfb-e7603be9b8c2.jpg"
+            alt=""
+            loading="lazy"
+          />
+        </div>
+
+        <div class="about-copy">
+          <p class="about-kicker">Sobre a Aflora Club</p>
+          <h2 class="about-title">Cultivo técnico com sensibilidade gastronômica</h2>
+
+          <p class="about-text">
+            Aflora Club foi criada por dois especialistas em agricultura urbana, combinando todo
+            conhecimento técnico das ciências agrárias e experiência na área com a paixão pela
+            agricultura sustentável, para atender um público criativo e exigente.
+          </p>
+
+          <p class="about-text">
+            Valorizamos a elevada qualidade dos nossos produtos. Todas as nossas flores são
+            colhidas uma à uma no dia da entrega, garantindo que cada flor chegue no auge de
+            frescor e beleza nas suas mãos.
+          </p>
+
+          <p class="about-text">
+            Nossas flores são colhidas sob demanda para preservar cada detalhe. Por isso, as
+            entregas acontecem sempre um dia após a confirmação do pedido. Você pode receber de
+            segunda a sábado, com pausa nas quintas-feiras.
+          </p>
+
+          <a class="about-cta" href="#contato">Falar com a Aflora</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="packs-section" id="packs">
+      <div class="packs-wrap">
+        <p class="packs-kicker">Packs de flores</p>
+        <h2 class="packs-title">Escolha seu pack da semana</h2>
+        <p class="packs-sub">
+          Produzimos flores comestíveis e PANCs sem adição de fertilizantes químicos, aditivos ou
+          agrotóxicos, com otimização de espaço e práticas 100% agroecológicas de cultivo.
+        </p>
+
+        <div class="packs-grid">
+          <article class="pack-card">
+            <div class="pack-card__photo-wrap">
+              <img
+                class="pack-card__photo"
+                src="images/7bcd7a21-1d4e-4213-ac83-ef181e9ee318.jpg"
+                alt="Pack mix de flores sazonais Aflora Club"
+                loading="lazy"
+              />
+            </div>
+            <div class="pack-card__body">
+              <h3 class="pack-card__name">Mix de flores sazonais</h3>
+              <p class="pack-card__desc">
+                Cerca de 20 flores sortidas em diferentes cores e tamanhos, colhidas sob demanda.
+              </p>
+              <div class="pack-card__footer">
+                <p class="pack-card__price">R$ 20</p>
+                <a
+                  class="pack-card__cta"
+                  href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20pack%20Mix%20de%20Flores%20Sazonais%20(R%2420).%20Pode%20me%20passar%20disponibilidade%20e%20frete%3F"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Pedir este pack no WhatsApp</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <article class="pack-card">
+            <div class="pack-card__photo-wrap">
+              <img
+                class="pack-card__photo"
+                src="images/8577dbc9-f979-484c-8087-8a5b2aa7f017.jpg"
+                alt="Pack personalizado Aflora Club"
+                loading="lazy"
+              />
+            </div>
+            <div class="pack-card__body">
+              <h3 class="pack-card__name">Pack personalizado</h3>
+              <p class="pack-card__desc">
+                Monte seu pedido escolhendo tipo e cor das flores disponíveis no catálogo da
+                semana.
+              </p>
+              <div class="pack-card__footer">
+                <p class="pack-card__price">R$ 22</p>
+                <a
+                  class="pack-card__cta"
+                  href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20pack%20Personalizado%20(R%2422).%20Posso%20escolher%20tipo%20e%20cor%20das%20flores%3F"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Pedir este pack no WhatsApp</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="packs-custom">
+          <p>
+            Monte seu pack personalizado no WhatsApp e diga exatamente o que você quer: somente
+            flores rosas, somente tagete ou combinações específicas.
+          </p>
+          <a
+            class="pack-card__cta"
+            href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20Quero%20montar%20um%20pack%20personalizado%20com%20flores%20comest%C3%ADveis."
+            target="_blank"
+            rel="noopener noreferrer"
+            >Montar pack no WhatsApp</a
+          >
+        </div>
+
+        <p class="packs-note">
+          As espécies variam por sazonalidade e disponibilidade de cultivo.
+        </p>
+      </div>
+    </section>
+
+    <section class="packs-v2" id="packs-v2">
+      <div class="packs-v2__wrap">
+        <div class="packs-v2__head">
+          <div>
+            <p class="packs-v2__kicker">Seção 3 • versão 2</p>
+            <h2 class="packs-v2__title">Mais opções, mesmo frescor</h2>
+          </div>
+          <p class="packs-v2__lead">
+            Comparativo rápido dos nossos packs para facilitar a escolha. Todos seguem colheita sob
+            demanda e envio no dia seguinte após confirmação.
+          </p>
+        </div>
+
+        <div class="packs-v2__list">
+          <article class="packs-v2__card">
+            <div class="packs-v2__photo-wrap">
+              <img
+                class="packs-v2__photo"
+                src="images/IMG_3707.PNG"
+                alt="Mix de flores sazonais Aflora Club"
+                loading="lazy"
+              />
+            </div>
+            <div class="packs-v2__body">
+              <h3 class="packs-v2__name">Mix de flores sazonais</h3>
+              <div class="packs-v2__meta">
+                <div>
+                  <p class="packs-v2__label">Faixa</p>
+                  <p class="packs-v2__value">Cerca de 20 flores sortidas</p>
+                </div>
+                <div>
+                  <p class="packs-v2__label">Preço</p>
+                  <p class="packs-v2__value">R$ 20</p>
+                </div>
+                <div>
+                  <p class="packs-v2__label">Entrega</p>
+                  <p class="packs-v2__value">D+1</p>
+                </div>
+              </div>
+              <p class="packs-v2__desc">
+                Ideal para cozinhas que querem variedade semanal com excelente custo-benefício.
+              </p>
+              <a
+                class="packs-v2__cta"
+                href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20pack%20Mix%20de%20Flores%20Sazonais%20(R%2420).%20Pode%20me%20passar%20disponibilidade%20e%20frete%3F"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Pedir este pack no WhatsApp</a
+              >
+            </div>
+          </article>
+
+          <article class="packs-v2__card">
+            <div class="packs-v2__photo-wrap">
+              <img
+                class="packs-v2__photo"
+                src="images/IMG_3708.PNG"
+                alt="Pack personalizado Aflora Club"
+                loading="lazy"
+              />
+            </div>
+            <div class="packs-v2__body">
+              <h3 class="packs-v2__name">Pack personalizado</h3>
+              <div class="packs-v2__meta">
+                <div>
+                  <p class="packs-v2__label">Faixa</p>
+                  <p class="packs-v2__value">Você escolhe tipo e cor das flores</p>
+                </div>
+                <div>
+                  <p class="packs-v2__label">Preço</p>
+                  <p class="packs-v2__value">R$ 22</p>
+                </div>
+                <div>
+                  <p class="packs-v2__label">Entrega</p>
+                  <p class="packs-v2__value">D+1</p>
+                </div>
+              </div>
+              <p class="packs-v2__desc">
+                Melhor escolha para cardápios autorais e demandas com paleta específica.
+              </p>
+              <a
+                class="packs-v2__cta"
+                href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20pack%20Personalizado%20(R%2422).%20Posso%20escolher%20tipo%20e%20cor%20das%20flores%3F"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Pedir este pack no WhatsApp</a
+              >
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="depo-section" id="depoimentos">
+      <div class="depo-wrap">
+        <div class="depo-head">
+          <p class="depo-kicker">Depoimentos reais</p>
+          <h2 class="depo-title">Não acredite só na nossa palavra</h2>
+        </div>
+
+        <div class="depo-grid" role="list">
+          <figure class="depo-item" role="listitem">
+            <img src="images/depo1.PNG" alt="Depoimento 1 — Aflora Club" loading="lazy" />
+          </figure>
+          <figure class="depo-item" role="listitem">
+            <img src="images/depo2.PNG" alt="Depoimento 2 — Aflora Club" loading="lazy" />
+          </figure>
+          <figure class="depo-item" role="listitem">
+            <img src="images/depo3.PNG" alt="Depoimento 3 — Aflora Club" loading="lazy" />
+          </figure>
+          <figure class="depo-item" role="listitem">
+            <img src="images/depo4.PNG" alt="Depoimento 4 — Aflora Club" loading="lazy" />
+          </figure>
+          <figure class="depo-item" role="listitem">
+            <img src="images/depo5.PNG" alt="Depoimento 5 — Aflora Club" loading="lazy" />
+          </figure>
+          <figure class="depo-item" role="listitem">
+            <img src="images/depo9.PNG" alt="Depoimento 6 — Aflora Club" loading="lazy" />
+          </figure>
+          <figure class="depo-item depo-item--center-row" role="listitem">
+            <img src="images/depo6.PNG" alt="Depoimento 7 — Aflora Club" loading="lazy" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer" id="contato">
+      <div class="footer-wrap">
+        <div class="footer-top">
+          <div>
+            <h2 class="footer-brand">aflora.club</h2>
+            <p class="footer-tagline">
+              Colheita sob demanda para cozinhas que tratam ingredientes com técnica e sensibilidade.
+            </p>
+          </div>
+
+          <div class="footer-contact">
+            <p class="footer-contact__title">Encomendas e contato</p>
+            <p class="footer-contact__text">
+              Você pode fazer sua encomenda via WhatsApp ou então é só nos mandar um e-mail e
+              encomendar quantos packs quiser.
+              <br />
+              <strong>olaahflora@gmail.com</strong>
+            </p>
+            <div class="footer-actions">
+              <a
+                class="footer-btn footer-btn--primary"
+                href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20Quero%20fazer%20uma%20encomenda%20com%20a%20Aflora%20Club."
+                target="_blank"
+                rel="noopener noreferrer"
+                >Pedir no WhatsApp</a
+              >
+              <a class="footer-btn" href="mailto:olaahflora@gmail.com">Enviar e-mail</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-cards">
+          <article class="footer-card">
+            <p class="footer-card__label">Atendimento</p>
+            <p class="footer-card__text">
+              Atendemos toda Porto Alegre. O valor da tele é calculado por quilometragem, nos
+              consulte.
+            </p>
+          </article>
+          <article class="footer-card">
+            <p class="footer-card__label">Condições B2B</p>
+            <p class="footer-card__text">
+              Trabalhamos com condições especiais de valores para pedidos fixos semanais ou pedidos
+              acima de 4 packs.
+            </p>
+          </article>
+          <article class="footer-card">
+            <p class="footer-card__label">Canal direto</p>
+            <p class="footer-card__text">
+              WhatsApp para resposta rápida e e-mail para pedidos detalhados.
+            </p>
+          </article>
+        </div>
+
+        <div class="footer-bottom">
+          <p>Aflora Club • Porto Alegre</p>
+          <p>Flores comestíveis e PANCs sob demanda</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -19,6 +19,9 @@
   - Faixa/valor (ex: Mix sazonal R$20, Pack personalizado R$22)
   - Botão: `Pedir este pack no WhatsApp`
 - O botão deve abrir o WhatsApp com mensagem pronta contendo o nome do pack
+- Produzimos flores comestíveis
+e PANCs sem adição de fertilizantes
+químicos, aditivos ou agrotóxicos, com otimização de espaço e práticas 100% agroecológicas de cultivo
 
 4. Monte seu Pack Personalizado
 - Explicar que o cliente pode escolher tipo/cor de flores

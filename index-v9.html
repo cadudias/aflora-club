@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aflora Club | V9 Hero Marca</title>
+    <meta
+      name="description"
+      content="Hero com paleta Aflora: lilas, lima e cream sobre video."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Manrope:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --aflora-lilas-600: #a66bea;
+        --aflora-lilas-800: #6d35b3;
+        --aflora-lima-500: #d7f05b;
+        --aflora-pink-500: #f05fa8;
+        --aflora-verde-500: #5c8f3a;
+        --aflora-cream-50: #fffdf8;
+        --aflora-cream-100: #f8f4eb;
+        --aflora-gray-600: #6b6872;
+        --aflora-ink-900: #19161f;
+        --aflora-white: #ffffff;
+        --success-whatsapp: #25d366;
+        --text-100: var(--aflora-cream-50);
+        --text-300: rgba(255, 253, 248, 0.78);
+        --line-200: rgba(166, 107, 234, 0.45);
+        --hero-align-inset: clamp(0rem, 5vw, 4.5rem);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        min-height: 100%;
+      }
+
+      body {
+        /* Stack igual a V7 Taste: Manrope texto + Outfit titulos/UI */
+        font-family: "Manrope", sans-serif;
+        font-weight: 400;
+        font-optical-sizing: auto;
+        background: var(--aflora-cream-50);
+        color: var(--aflora-ink-900);
+        overflow-x: hidden;
+      }
+
+      .container {
+        width: min(1320px, calc(100% - 4rem));
+        margin: 0 auto;
+      }
+
+      .hero {
+        position: relative;
+        min-height: 100dvh;
+        isolation: isolate;
+        color: var(--text-100);
+        background:
+          linear-gradient(
+            105deg,
+            rgba(109, 53, 179, 0.52) 0%,
+            rgba(25, 22, 31, 0.4) 42%,
+            rgba(25, 22, 31, 0.26) 58%,
+            rgba(92, 143, 58, 0.18) 100%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(255, 253, 248, 0.1) 0%,
+            rgba(25, 22, 31, 0.62) 100%
+          );
+      }
+
+      .hero-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -3;
+        filter: saturate(86%) contrast(97%) brightness(72%);
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        pointer-events: none;
+        background:
+          linear-gradient(
+            180deg,
+            rgba(25, 22, 31, 0.28) 0%,
+            rgba(25, 22, 31, 0.52) 100%
+          ),
+          radial-gradient(
+            70% 85% at 12% 72%,
+            rgba(166, 107, 234, 0.26) 0%,
+            rgba(166, 107, 234, 0) 55%
+          ),
+          radial-gradient(
+            55% 60% at 88% 18%,
+            rgba(240, 95, 168, 0.17) 0%,
+            rgba(240, 95, 168, 0) 50%
+          ),
+          radial-gradient(
+            50% 55% at 50% 108%,
+            rgba(215, 240, 91, 0.14) 0%,
+            rgba(215, 240, 91, 0) 45%
+          );
+      }
+
+      .hero-rings {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .hero-rings::before,
+      .hero-rings::after {
+        content: "";
+        position: absolute;
+        border: 1px solid rgba(215, 240, 91, 0.35);
+        border-radius: 50%;
+      }
+
+      .hero-rings::before {
+        width: min(79vw, 920px);
+        aspect-ratio: 1 / 1;
+        right: -10vw;
+        top: 7vh;
+      }
+
+      .hero-rings::after {
+        width: min(84vw, 1040px);
+        aspect-ratio: 1 / 1;
+        right: -16vw;
+        top: 2vh;
+        opacity: 0.62;
+      }
+
+      .site-header {
+        position: absolute;
+        inset: 0 0 auto 0;
+        z-index: 3;
+        border-top: 2px solid rgba(215, 240, 91, 0.55);
+        background: linear-gradient(
+          to bottom,
+          rgba(109, 53, 179, 0.35),
+          rgba(25, 22, 31, 0)
+        );
+      }
+
+      .nav-wrap {
+        min-height: 88px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        padding-left: var(--hero-align-inset);
+      }
+
+      .brand {
+        font-family: "Outfit", sans-serif;
+        font-size: 1.95rem;
+        font-weight: 300;
+        letter-spacing: 0.2em;
+        text-transform: lowercase;
+        color: var(--aflora-cream-50);
+        text-decoration: none;
+        text-shadow: 0 2px 24px rgba(109, 53, 179, 0.45);
+      }
+
+      /* Cor do sufixo: precisa specificity acima da heranca do link */
+      a.brand .brand-tld {
+        color: #a66bea;
+        text-shadow:
+          0 0 20px rgba(166, 107, 234, 0.55),
+          0 2px 12px rgba(25, 22, 31, 0.35);
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        font-family: "Outfit", sans-serif;
+        font-size: 0.8rem;
+        letter-spacing: 0.09em;
+        color: rgba(255, 253, 248, 0.9);
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .nav-links a:hover,
+      .nav-links a:focus-visible {
+        color: var(--aflora-lima-500);
+        outline: none;
+      }
+
+      .hero-content {
+        min-height: 100dvh;
+        display: grid;
+        align-content: center;
+        padding-top: 8.6rem;
+        padding-bottom: 5rem;
+      }
+
+      .hero-copy {
+        max-width: 680px;
+        margin-left: var(--hero-align-inset);
+      }
+
+      .hero-kicker {
+        font-family: "Outfit", sans-serif;
+        font-size: 0.74rem;
+        letter-spacing: 0.17em;
+        text-transform: uppercase;
+        color: var(--aflora-ink-900);
+        display: inline-flex;
+        align-items: center;
+        padding: 0.45rem 0.75rem;
+        border-radius: 999px;
+        background: var(--aflora-lima-500);
+        box-shadow: 0 10px 28px rgba(109, 53, 179, 0.25);
+      }
+
+      h1 {
+        margin-top: 1.1rem;
+        font-family: "Outfit", sans-serif;
+        font-size: clamp(2.2rem, 5.1vw, 4.9rem);
+        line-height: 1.02;
+        font-weight: 300;
+        letter-spacing: 0.01em;
+        color: var(--aflora-cream-50);
+        max-width: 15ch;
+        text-wrap: balance;
+        text-shadow: 0 4px 36px rgba(25, 22, 31, 0.45);
+      }
+
+      .hero-subtitle {
+        font-family: "Manrope", sans-serif;
+        margin-top: 1.3rem;
+        max-width: 46ch;
+        font-size: clamp(0.94rem, 1.1vw, 1.06rem);
+        font-weight: 400;
+        color: var(--text-300);
+        line-height: 1.58;
+      }
+
+      .hero-actions {
+        margin-top: 2.35rem;
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+      }
+
+      .btn {
+        font-family: "Manrope", sans-serif;
+        border-radius: 999px;
+        min-width: 176px;
+        padding: 0.78rem 1.35rem;
+        text-decoration: none;
+        text-align: center;
+        color: var(--aflora-white);
+        font-size: 0.74rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        backdrop-filter: blur(5px);
+        transition:
+          transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+          border-color 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+          background-color 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+          filter 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+        filter: brightness(0.92);
+      }
+
+      .btn:focus-visible {
+        transform: translateY(-1px);
+        outline: 2px solid var(--aflora-lilas-800);
+        outline-offset: 2px;
+      }
+
+      .btn:active {
+        transform: scale(0.98);
+      }
+
+      .btn-primary {
+        border: 1px solid var(--aflora-lilas-600);
+        background: var(--aflora-lilas-600);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.22),
+          0 14px 34px rgba(109, 53, 179, 0.35);
+      }
+
+      .btn-secondary {
+        border: 2px solid var(--aflora-white);
+        background: var(--success-whatsapp);
+        color: var(--aflora-white);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.25),
+          0 12px 28px rgba(37, 211, 102, 0.28);
+      }
+
+      .join-tag {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 4;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.95rem 1.2rem;
+        background: var(--aflora-ink-900);
+        color: var(--aflora-cream-50);
+        text-decoration: none;
+        font-family: "Outfit", sans-serif;
+        font-size: 0.74rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        border-top: 1px solid rgba(215, 240, 91, 0.4);
+        border-right: 1px solid rgba(166, 107, 234, 0.45);
+      }
+
+      .join-tag span {
+        font-size: 0.88rem;
+        line-height: 1;
+      }
+
+      .about-editorial {
+        background:
+          radial-gradient(
+            120% 140% at 10% 20%,
+            rgba(166, 107, 234, 0.16) 0%,
+            rgba(166, 107, 234, 0) 42%
+          ),
+          linear-gradient(
+            165deg,
+            #4a362d 0%,
+            #5a4134 46%,
+            #66493b 100%
+          );
+        color: var(--aflora-cream-50);
+        border-top: 1px solid rgba(248, 244, 235, 0.2);
+      }
+
+      .about-wrap {
+        padding: clamp(3.2rem, 7vw, 5.2rem) 0;
+      }
+
+      .about-head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 1rem;
+        border-bottom: 1px solid rgba(248, 244, 235, 0.22);
+        padding-bottom: 1rem;
+      }
+
+      .about-title {
+        font-family: "Outfit", sans-serif;
+        font-size: clamp(2rem, 5vw, 4.2rem);
+        font-weight: 300;
+        letter-spacing: 0.02em;
+        line-height: 0.95;
+        text-transform: uppercase;
+      }
+
+      .about-count {
+        font-family: "Outfit", sans-serif;
+        font-size: 0.78rem;
+        letter-spacing: 0.1em;
+        color: rgba(248, 244, 235, 0.82);
+        text-transform: uppercase;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 1fr 1fr;
+        margin-top: 1.1rem;
+        border-left: 1px solid rgba(248, 244, 235, 0.14);
+        border-right: 1px solid rgba(248, 244, 235, 0.14);
+      }
+
+      .about-col {
+        padding: 1.4rem 1.2rem 1.7rem;
+        min-height: 235px;
+      }
+
+      .about-col + .about-col {
+        border-left: 1px solid rgba(248, 244, 235, 0.14);
+      }
+
+      .about-label {
+        font-family: "Outfit", sans-serif;
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(248, 244, 235, 0.76);
+      }
+
+      .about-col h3 {
+        margin-top: 0.9rem;
+        font-family: "Outfit", sans-serif;
+        font-size: 1.2rem;
+        font-weight: 400;
+        letter-spacing: 0.015em;
+        line-height: 1.2;
+      }
+
+      .about-col p {
+        margin-top: 0.9rem;
+        max-width: 36ch;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: rgba(248, 244, 235, 0.9);
+      }
+
+      @media (max-width: 980px) {
+        .container {
+          width: calc(100% - 2rem);
+        }
+
+        .nav-links {
+          gap: 1.1rem;
+        }
+
+        .hero-content {
+          padding-top: 6.7rem;
+        }
+
+        .hero-copy {
+          margin-left: 0;
+          max-width: 620px;
+        }
+
+        .site-header .nav-wrap {
+          padding-left: 0;
+        }
+
+        .hero-rings::before {
+          width: min(98vw, 780px);
+          right: -38vw;
+          top: 14vh;
+        }
+
+        .hero-rings::after {
+          width: min(108vw, 860px);
+          right: -45vw;
+          top: 8vh;
+        }
+
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .about-col + .about-col {
+          border-left: 0;
+          border-top: 1px solid rgba(248, 244, 235, 0.14);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .brand {
+          font-size: 1.55rem;
+          letter-spacing: 0.16em;
+        }
+
+        .nav-links li:first-child {
+          display: none;
+        }
+
+        h1 {
+          max-width: 14ch;
+        }
+
+        .hero-actions {
+          flex-direction: column;
+          align-items: stretch;
+          width: min(290px, 100%);
+        }
+
+        .btn {
+          min-width: 0;
+          width: 100%;
+        }
+
+        .join-tag {
+          padding: 0.82rem 1rem;
+        }
+
+        .about-head {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="hero" id="inicio">
+      <video
+        class="hero-video"
+        src="hero-imgs/magnific_use-this-image-as-the-bas_2886030875.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        aria-hidden="true"
+      ></video>
+      <div class="hero-rings" aria-hidden="true"></div>
+
+      <header class="site-header">
+        <div class="container nav-wrap">
+          <a class="brand" href="#">aflora<span class="brand-tld">.club</span></a>
+
+          <ul class="nav-links" aria-label="Menu principal">
+            <li><a href="#packs">Packs</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <h1>Sabores vivos comecam no respiro da natureza</h1>
+          <p class="hero-subtitle">
+            Flores comestiveis cultivadas sob demanda para cozinhas que tratam
+            cada prato como uma experiencia memoravel.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#packs">Baixar catalogo</a>
+            <a
+              class="btn btn-secondary"
+              href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20Quero%20fazer%20um%20pedido%20de%20flores%20comest%C3%ADveis."
+              target="_blank"
+              rel="noopener noreferrer"
+              >Falar no WhatsApp</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <a class="join-tag" href="#contato"><span>x</span> Entrar na lista</a>
+    </main>
+
+    <section class="about-editorial" id="sobre">
+      <div class="container about-wrap">
+        <div class="about-head">
+          <h2 class="about-title">Sobre Aflora Club</h2>
+          <span class="about-count">Seção 02</span>
+        </div>
+
+        <div class="about-grid">
+          <article class="about-col">
+            <p class="about-label">Fundadores</p>
+            <h3>Especialistas em agricultura urbana aplicada a gastronomia</h3>
+            <p>
+              A Aflora nasce da parceria entre dois cultivadores focados em
+              produtividade de pequena escala, controle de qualidade e leitura
+              sazonal para cozinhas autorais.
+            </p>
+          </article>
+
+          <article class="about-col">
+            <p class="about-label">Tecnica + Sustentabilidade</p>
+            <h3>Processo enxuto, cultivo limpo e colheita no tempo certo</h3>
+            <p>
+              Trabalhamos com manejo consciente de agua e solo, lotes curtos e
+              colheita sob demanda para manter textura, aroma e vida util no
+              padrao que operacoes B2B exigem.
+            </p>
+          </article>
+
+          <article class="about-col">
+            <p class="about-label">Para publico criativo e exigente</p>
+            <h3>Flores comestiveis para quem transforma prato em assinatura</h3>
+            <p>
+              Atendemos restaurantes, cafes e hoteis que buscam identidade
+              visual forte e consistencia de entrega, com curadoria de especies
+              e suporte de combinacao por menu.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

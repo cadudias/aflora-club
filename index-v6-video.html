@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aflora Club | V6 Video</title>
+    <meta
+      name="description"
+      content="Versao V6 com fundo em video no hero."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700&family=Outfit:wght@300;400;500;600&family=Manrope:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --aflora-lilas-600: #a66bea;
+        --aflora-lilas-800: #6d35b3;
+        --aflora-lima-500: #d7f05b;
+        --aflora-pink-500: #f05fa8;
+        --aflora-verde-500: #5c8f3a;
+        --aflora-terra-700: #3b2a2a;
+        --aflora-cream-50: #fffdf8;
+        --aflora-cream-100: #f8f4eb;
+        --aflora-gray-600: #6b6872;
+        --aflora-ink-900: #19161f;
+        --aflora-white: #ffffff;
+        --success-whatsapp: #25d366;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Manrope", sans-serif;
+        background: var(--aflora-cream-50);
+        color: var(--aflora-ink-900);
+        overflow-x: hidden;
+      }
+
+      .container {
+        width: min(1320px, calc(100% - 4rem));
+        margin: 0 auto;
+      }
+
+      .hero {
+        position: relative;
+        min-height: 100dvh;
+        isolation: isolate;
+      }
+
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        overflow: hidden;
+      }
+
+      .hero-bg video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: linear-gradient(
+          180deg,
+          rgba(35, 23, 55, 0.28) 0%,
+          rgba(20, 14, 35, 0.34) 45%,
+          rgba(14, 11, 25, 0.44) 100%
+        );
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: linear-gradient(
+          180deg,
+          rgba(10, 8, 18, 0.08) 0%,
+          rgba(10, 8, 18, 0.18) 55%,
+          rgba(10, 8, 18, 0.3) 100%
+        );
+      }
+
+      .site-header {
+        position: absolute;
+        inset: 0 0 auto 0;
+        z-index: 2;
+        border-top: 1px solid rgba(215, 240, 91, 0.58);
+        background: linear-gradient(
+          to bottom,
+          rgba(14, 12, 24, 0.45),
+          rgba(14, 12, 24, 0)
+        );
+      }
+
+      .nav-wrap {
+        min-height: 88px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+      }
+
+      .menu-trigger {
+        width: 28px;
+        height: 18px;
+        display: grid;
+        align-content: space-between;
+        border: 0;
+        background: transparent;
+      }
+
+      .menu-trigger span {
+        display: block;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.88);
+      }
+
+      .brand {
+        font-family: "Outfit", sans-serif;
+        font-size: 2.1rem;
+        font-weight: 300;
+        letter-spacing: 0.22em;
+        text-transform: lowercase;
+        color: rgba(244, 241, 234, 0.94);
+        text-decoration: none;
+        margin-left: 5vw;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        font-family: "Outfit", sans-serif;
+        font-size: 0.82rem;
+        letter-spacing: 0.09em;
+        color: rgba(244, 241, 234, 0.88);
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .hero-content {
+        min-height: 100dvh;
+        display: grid;
+        align-content: center;
+        justify-items: center;
+        text-align: center;
+        padding-top: 6.5rem;
+        padding-bottom: 4.5rem;
+      }
+
+      h1 {
+        font-family: "Outfit", sans-serif;
+        font-size: clamp(2rem, 4.9vw, 4rem);
+        line-height: 1.1;
+        font-weight: 300;
+        letter-spacing: 0.01em;
+        color: rgba(244, 241, 234, 0.97);
+        max-width: 22ch;
+        text-wrap: balance;
+      }
+
+      .hero-subtitle {
+        margin-top: 1.2rem;
+        font-size: clamp(0.9rem, 1.15vw, 1.05rem);
+        color: rgba(255, 255, 255, 0.86);
+      }
+
+      .hero-actions {
+        margin-top: 2.2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+      }
+
+      .btn {
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        border-radius: 999px;
+        padding: 0.72rem 1.2rem;
+        text-decoration: none;
+        color: var(--aflora-white);
+        font-size: 0.74rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .btn-primary {
+        border-color: var(--aflora-lilas-600);
+        background: var(--aflora-lilas-600);
+      }
+
+      .btn-primary:hover {
+        background: var(--aflora-lilas-800);
+        border-color: var(--aflora-lilas-800);
+      }
+
+      .btn-secondary {
+        border-color: rgba(255, 255, 255, 0.52);
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .btn-whatsapp {
+        border-color: var(--success-whatsapp);
+        background: var(--success-whatsapp);
+      }
+
+      .btn-whatsapp:hover {
+        filter: brightness(0.92);
+      }
+
+      .section {
+        padding: clamp(4rem, 8vw, 7rem) 0;
+        position: relative;
+      }
+
+      .section + .section {
+        border-top: 1px solid rgba(25, 22, 31, 0.08);
+      }
+
+      .section-light {
+        background: var(--aflora-cream-50);
+        color: var(--aflora-ink-900);
+      }
+
+      .section-soft {
+        background: var(--aflora-cream-100);
+        color: var(--aflora-ink-900);
+      }
+
+      .section-lilac {
+        background: linear-gradient(
+          130deg,
+          rgba(166, 107, 234, 0.14),
+          rgba(240, 95, 168, 0.08)
+        );
+      }
+
+      .section-lime {
+        background: linear-gradient(
+          165deg,
+          rgba(215, 240, 91, 0.22),
+          rgba(92, 143, 58, 0.08)
+        );
+      }
+
+      .section-ink {
+        background: var(--aflora-ink-900);
+        color: var(--aflora-cream-50);
+      }
+
+      .section-ink .section-kicker,
+      .section-ink .section-intro,
+      .section-ink .panel p,
+      .section-ink .flow li {
+        color: rgba(248, 244, 235, 0.86);
+      }
+
+      .section-kicker {
+        font-family: "Outfit", sans-serif;
+        font-size: 0.78rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--aflora-lilas-800);
+        margin-bottom: 1rem;
+      }
+
+      .section h2 {
+        font-family: "Syne", sans-serif;
+        font-size: clamp(1.7rem, 3.1vw, 2.8rem);
+        line-height: 1.12;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        max-width: 20ch;
+      }
+
+      .section-intro {
+        margin-top: 1rem;
+        max-width: 68ch;
+        color: var(--aflora-gray-600);
+        line-height: 1.7;
+      }
+
+      .about-grid {
+        margin-top: 2.2rem;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 1.5rem;
+      }
+
+      .panel {
+        border: 1px solid rgba(109, 53, 179, 0.16);
+        border-radius: 1.25rem;
+        padding: 1.25rem;
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(2px);
+      }
+
+      .panel p {
+        color: var(--aflora-gray-600);
+        line-height: 1.68;
+      }
+
+      .packs-layout {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: 0.95fr 1.25fr;
+        gap: 1.2rem;
+      }
+
+      .pack-photo {
+        border: 1px dashed rgba(109, 53, 179, 0.42);
+        border-radius: 1rem;
+        min-height: 210px;
+        display: grid;
+        place-items: center;
+        color: var(--aflora-lilas-800);
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        background: linear-gradient(
+          135deg,
+          rgba(166, 107, 234, 0.1),
+          rgba(215, 240, 91, 0.26)
+        );
+      }
+
+      .pack-list {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .pack-card {
+        border: 1px solid rgba(109, 53, 179, 0.2);
+        border-radius: 1rem;
+        padding: 1.1rem;
+        background: rgba(255, 255, 255, 0.88);
+      }
+
+      .pack-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .pack-title {
+        font-family: "Outfit", sans-serif;
+        font-size: 1.03rem;
+        letter-spacing: 0.01em;
+        color: var(--aflora-ink-900);
+      }
+
+      .pack-price {
+        font-size: 0.9rem;
+        color: var(--aflora-lilas-800);
+      }
+
+      .pack-card p {
+        margin-top: 0.6rem;
+        color: var(--aflora-gray-600);
+        line-height: 1.6;
+      }
+
+      .pack-card .btn {
+        display: inline-block;
+        margin-top: 0.9rem;
+      }
+
+      .split {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.1rem;
+      }
+
+      .species-list {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.65rem;
+        margin-top: 1rem;
+      }
+
+      .species-list li {
+        border: 1px solid rgba(109, 53, 179, 0.24);
+        border-radius: 999px;
+        padding: 0.58rem 0.88rem;
+        font-size: 0.83rem;
+        color: var(--aflora-ink-900);
+        background: rgba(255, 255, 255, 0.7);
+      }
+
+      .flow {
+        list-style: none;
+        margin-top: 1.2rem;
+        display: grid;
+        gap: 0.7rem;
+      }
+
+      .flow li {
+        padding-left: 1.1rem;
+        position: relative;
+        color: var(--aflora-gray-600);
+      }
+
+      .flow li::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 999px;
+        background: var(--aflora-pink-500);
+        position: absolute;
+        top: 0.56rem;
+        left: 0;
+      }
+
+      .contact-block {
+        margin-top: 1.2rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.85rem;
+      }
+
+      .contact-mail {
+        color: var(--aflora-lilas-800);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(109, 53, 179, 0.35);
+        padding-bottom: 2px;
+      }
+
+      footer {
+        padding: 1.6rem 0 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+        background: var(--aflora-ink-900);
+      }
+
+      .footer-wrap {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        font-size: 0.8rem;
+        color: rgba(248, 244, 235, 0.8);
+      }
+
+      @media (max-width: 980px) {
+        .container {
+          width: calc(100% - 2rem);
+        }
+
+        .brand {
+          margin-left: 0;
+          font-size: 1.7rem;
+          letter-spacing: 0.16em;
+        }
+
+        .nav-links {
+          gap: 1rem;
+        }
+
+        .nav-links a {
+          font-size: 0.72rem;
+        }
+
+        h1 {
+          max-width: 16ch;
+        }
+
+        .about-grid,
+        .packs-layout,
+        .split {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .nav-wrap {
+          display: grid;
+          grid-template-columns: auto 1fr;
+          gap: 0.7rem;
+          align-items: center;
+          padding-block: 0.9rem;
+        }
+
+        .brand {
+          justify-self: end;
+        }
+
+        .nav-links {
+          grid-column: 1 / -1;
+          overflow-x: auto;
+          padding-bottom: 0.25rem;
+        }
+
+        .nav-links li:first-child {
+          display: block;
+        }
+
+        .hero-actions {
+          flex-direction: column;
+          width: min(280px, 100%);
+        }
+
+        .btn {
+          width: 100%;
+          text-align: center;
+        }
+
+        .species-list {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-wrap {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="hero" id="inicio">
+      <div class="hero-bg" aria-hidden="true">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source
+            src="hero-imgs/magnific_use-this-image-as-the-bas_2886030875.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+
+      <header class="site-header">
+        <div class="container nav-wrap">
+          <button class="menu-trigger" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+          </button>
+
+          <a class="brand" href="#">aflora</a>
+
+          <ul class="nav-links" aria-label="Menu principal">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#packs">Packs</a></li>
+            <li><a href="#personalizado">Personalizado</a></li>
+            <li><a href="#especies">Especies</a></li>
+            <li><a href="#entrega">Entrega</a></li>
+            <li><a href="#b2b">Atacado/B2B</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="container hero-content">
+        <h1>Flores comestiveis que transformam experiencias a mesa</h1>
+        <p class="hero-subtitle">Cultivo sob demanda em Porto Alegre</p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#packs">Ver packs</a>
+          <a
+            class="btn btn-whatsapp"
+            href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20Quero%20fazer%20um%20pedido%20de%20flores%20comest%C3%ADveis."
+            target="_blank"
+            rel="noopener noreferrer"
+            >WhatsApp</a
+          >
+        </div>
+      </div>
+    </main>
+
+    <section class="section section-light" id="sobre">
+      <div class="container">
+        <p class="section-kicker">Sobre a Aflora Club</p>
+        <h2>Tecnica agricola e sensibilidade criativa no mesmo cultivo</h2>
+        <p class="section-intro">
+          Somos uma dupla de especialistas em agricultura urbana que produz
+          flores comestiveis para cozinhas que buscam identidade visual e sabor
+          limpo. Trabalhamos com rastreio de lote, colheita sob demanda e manejo
+          sustentavel para atender restaurantes, cafes e hoteis.
+        </p>
+
+        <div class="about-grid">
+          <article class="panel">
+            <p>
+              Nosso processo prioriza qualidade previsivel para servico
+              profissional: cultivo orientado por calendario, padrao de colheita
+              e selecao manual de hastes para reduzir variacao no prato.
+            </p>
+          </article>
+          <article class="panel">
+            <p>
+              Aflora Club atende negocios exigentes de Porto Alegre que precisam
+              de constancia, frescor real e especies adaptadas a cada janela
+              sazonal.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-lilac" id="packs">
+      <div class="container">
+        <p class="section-kicker">Packs de Flores</p>
+        <h2>Escolha o pack ideal para o ritmo da sua cozinha</h2>
+        <p class="section-intro">
+          Placeholders prontos para voce substituir pelas fotos oficiais dos
+          produtos. Cada botao envia mensagem direta com o nome do pack.
+        </p>
+
+        <div class="packs-layout">
+          <div class="pack-list">
+            <article class="pack-card">
+              <div class="pack-head">
+                <h3 class="pack-title">Mix de Flores Sazonais</h3>
+                <span class="pack-price">a partir de R$20</span>
+              </div>
+              <p>
+                Selecao equilibrada para finalizacao de pratos e coqueteis com
+                variacao semanal.
+              </p>
+              <a
+                class="btn btn-primary"
+                href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20pack%3A%20Mix%20de%20Flores%20Sazonais%20%28R%2420%29.%20Pode%20me%20passar%20disponibilidade%20e%20frete%20para%20%5Bbairro%5D%3F"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Pedir este pack no WhatsApp</a
+              >
+            </article>
+
+            <article class="pack-card">
+              <div class="pack-head">
+                <h3 class="pack-title">Pack Personalizado</h3>
+                <span class="pack-price">a partir de R$22</span>
+              </div>
+              <p>
+                Composicao sob escolha de cor, formato e tipo de flor conforme
+                proposta do seu menu.
+              </p>
+              <a
+                class="btn btn-primary"
+                href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20pack%3A%20Pack%20Personalizado%20%28R%2422%29.%20Pode%20me%20passar%20disponibilidade%20e%20frete%20para%20%5Bbairro%5D%3F"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Pedir este pack no WhatsApp</a
+              >
+            </article>
+          </div>
+
+          <div class="pack-photo">Placeholder foto pack 01 (4:3)</div>
+          <div class="pack-photo">Placeholder foto pack 02 (4:3)</div>
+          <div class="pack-photo">Placeholder foto pack 03</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-lime" id="personalizado">
+      <div class="container">
+        <p class="section-kicker">Monte seu Pack</p>
+        <h2>Define paleta, especie e volume com suporte direto no WhatsApp</h2>
+        <p class="section-intro">
+          Montamos combinacoes por tipo de servico: menu degustacao, confeitaria,
+          coquetelaria ou eventos. Voce informa briefing, dia e bairro para
+          entrega.
+        </p>
+        <div class="contact-block">
+          <a
+            class="btn btn-primary"
+            href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20Quero%20montar%20um%20pack%20personalizado."
+            target="_blank"
+            rel="noopener noreferrer"
+            >Montar pack no WhatsApp</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="especies">
+      <div class="container">
+        <p class="section-kicker">Catalogo de Especies</p>
+        <h2>Variedades atuais para finalizacao, saladas e drinks</h2>
+        <p class="section-intro">
+          Disponibilidade muda conforme sazonalidade e condicoes climaticas.
+        </p>
+
+        <div class="split">
+          <article class="panel">
+            <h3 class="pack-title">Flores comestiveis atuais</h3>
+            <ul class="species-list">
+              <li>Cravina</li>
+              <li>Amor perfeito</li>
+              <li>Crisantemo</li>
+              <li>Clitoria</li>
+              <li>Boca de leao</li>
+              <li>Tagete</li>
+              <li>Primavera</li>
+              <li>Begonia</li>
+              <li>Sininho</li>
+              <li>Zinia</li>
+            </ul>
+          </article>
+
+          <article class="panel">
+            <h3 class="pack-title">PANCs disponiveis</h3>
+            <ul class="species-list">
+              <li>Peixinho da horta</li>
+              <li>Azedinha</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-ink" id="entrega">
+      <div class="container">
+        <p class="section-kicker">Como Funciona</p>
+        <h2>Pedido confirmado hoje, colheita e entrega no ciclo seguinte</h2>
+        <ul class="flow">
+          <li>Colheita sob demanda para preservar textura e aroma.</li>
+          <li>Entrega no dia seguinte apos confirmacao do pedido.</li>
+          <li>Atendimento em Porto Alegre com frete por quilometragem.</li>
+          <li>
+            Dias de atendimento: segunda a sabado. Nao atendemos aos domingos.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="b2b">
+      <div class="container">
+        <p class="section-kicker">Condicoes Comerciais</p>
+        <h2>Politica B2B para operacoes recorrentes</h2>
+        <div class="split">
+          <article class="panel">
+            <h3 class="pack-title">Beneficios para recorrencia</h3>
+            <ul class="flow">
+              <li>Valores especiais para pedidos fixos semanais.</li>
+              <li>Condicoes diferenciadas para volumes acima de 4 packs.</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h3 class="pack-title">Placeholder institucional</h3>
+            <p>
+              Placeholder para voce inserir uma foto de bastidores, colheita ou
+              mesa finalizada para reforcar o posicionamento premium.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-lilac" id="contato">
+      <div class="container">
+        <p class="section-kicker">Contato</p>
+        <h2>Encomende quantos packs quiser para o seu servico</h2>
+        <p class="section-intro">
+          WhatsApp como canal principal para disponibilidade, frete e ajuste de
+          especies por data.
+        </p>
+        <div class="contact-block">
+          <a
+            class="btn btn-whatsapp"
+            href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20Quero%20fazer%20um%20pedido%20de%20flores%20comest%C3%ADveis."
+            target="_blank"
+            rel="noopener noreferrer"
+            >Pedir no WhatsApp</a
+          >
+          <a class="contact-mail" href="mailto:olaahflora@gmail.com"
+            >olaahflora@gmail.com</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container footer-wrap">
+        <span>Aflora Club</span>
+        <span>Flores comestiveis frescas para restaurantes, cafes e hoteis</span>
+      </div>
+    </footer>
+  </body>
+</html>

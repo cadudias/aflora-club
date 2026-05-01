@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aflora Club | V10 Hero — referência editorial</title>
+    <meta
+      name="description"
+      content="Flores comestíveis frescas para restaurantes, cafés e hotéis — Porto Alegre."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --hero-ink: #0f1410;
+        --line-fine: rgba(255, 255, 255, 0.42);
+        --line-soft: rgba(255, 255, 255, 0.2);
+        --text: #fdfbf8;
+        --text-muted: rgba(253, 251, 248, 0.78);
+        --pad-x: clamp(1.1rem, 4vw, 3.75rem);
+        --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "DM Sans", system-ui, sans-serif;
+        font-optical-sizing: auto;
+        background: var(--hero-ink);
+        color: var(--text);
+        overflow-x: hidden;
+      }
+
+      button {
+        font: inherit;
+        color: inherit;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .hero-v10 {
+        position: relative;
+        min-height: 100dvh;
+        isolation: isolate;
+      }
+
+      .hero-v10__media {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        overflow: hidden;
+      }
+
+      .hero-v10__video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(72%) contrast(92%) brightness(68%);
+      }
+
+      .hero-v10__veil {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        background:
+          linear-gradient(
+            112deg,
+            rgba(8, 12, 12, 0.82) 7%,
+            rgba(8, 12, 12, 0.62) 38%,
+            rgba(8, 12, 12, 0.46) 55%,
+            rgba(8, 12, 12, 0.74) 100%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(8, 12, 12, 0.2) 0%,
+            rgba(8, 12, 12, 0.75) 100%
+          );
+      }
+
+      .hero-v10__grain {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        pointer-events: none;
+        opacity: 0.045;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        mix-blend-mode: overlay;
+      }
+
+      /* —— Top bar —— */
+      .topbar-v10 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        border-bottom: 1px solid var(--line-fine);
+        background: linear-gradient(
+          180deg,
+          rgba(8, 12, 10, 0.55) 0%,
+          rgba(8, 12, 10, 0) 100%
+      );
+      }
+
+      .topbar-v10__inner {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        min-height: 5.75rem;
+        padding: 0 var(--pad-x);
+        gap: 1rem;
+      }
+
+      .topbar-v10__left {
+        display: flex;
+        align-items: center;
+        gap: 1.1rem;
+        justify-self: start;
+      }
+
+      .topbar-v10__right {
+        display: flex;
+        align-items: center;
+        gap: clamp(0.85rem, 2.2vw, 1.75rem);
+        justify-self: end;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .icon-btn-v10 {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 2px;
+        transition: opacity 0.35s var(--ease-out);
+      }
+
+      .icon-btn-v10:hover {
+        opacity: 0.72;
+      }
+
+      .menu-lines {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        width: 1.35rem;
+      }
+
+      .menu-lines span {
+        display: block;
+        height: 1px;
+        background: currentColor;
+        border-radius: 1px;
+      }
+
+      .menu-lines span:last-child {
+        width: 78%;
+      }
+
+      .btn-outline-light {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.55rem 1.05rem;
+        font-size: 0.6875rem;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        border: 1px solid var(--line-fine);
+        color: var(--text);
+        transition:
+          border-color 0.35s var(--ease-out),
+          background 0.35s var(--ease-out),
+          color 0.35s var(--ease-out);
+      }
+
+      .btn-outline-light:hover,
+      .btn-outline-light:focus-visible {
+        border-color: rgba(255, 255, 255, 0.85);
+        background: rgba(255, 255, 255, 0.06);
+        outline: none;
+      }
+
+      /* Center brand */
+      .brand-stack {
+        justify-self: center;
+      }
+
+      .brand-emblem {
+        width: 2.85rem;
+        height: 2.85rem;
+        border-radius: 50%;
+        border: 1px solid var(--line-fine);
+        display: grid;
+        place-items: center;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.15rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .brand-stack__home {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.55rem;
+        text-align: center;
+        color: inherit;
+      }
+
+      .brand-wordmark {
+        font-family: "Cinzel", serif;
+        font-size: clamp(0.95rem, 1.55vw, 1.125rem);
+        font-weight: 500;
+        letter-spacing: 0.28em;
+        text-indent: 0.28em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .brand-club {
+        color: #c768f1;
+      }
+
+      .brand-stack__home:focus-visible {
+        outline: 2px solid rgba(255, 255, 255, 0.65);
+        outline-offset: 6px;
+        border-radius: 2px;
+      }
+
+      /* Nav utilities */
+      .nav-link-muted {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        transition: color 0.35s var(--ease-out);
+      }
+
+      .nav-link-muted:hover,
+      .nav-link-muted:focus-visible {
+        color: var(--text);
+        outline: none;
+      }
+
+      .chevron {
+        width: 0;
+        height: 0;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 5px solid currentColor;
+        opacity: 0.72;
+      }
+
+      .icon-sm {
+        width: 1rem;
+        height: 1rem;
+        opacity: 0.88;
+      }
+
+      /* —— Hero copy —— */
+      .hero-v10__stage {
+        position: relative;
+        z-index: 5;
+        min-height: 100dvh;
+        display: grid;
+        align-content: center;
+        padding: clamp(7.5rem, 18vw, 10rem) var(--pad-x) clamp(5.5rem, 14vh, 7rem);
+      }
+
+      .hero-v10__headline {
+        text-align: left;
+        max-width: 18ch;
+      }
+
+      .hero-v10__headline h1 {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 500;
+        font-size: clamp(1.95rem, 6.2vw, 4.8rem);
+        line-height: 0.92;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        color: var(--text);
+        text-wrap: balance;
+        text-shadow: 0 2px 42px rgba(0, 0, 0, 0.35);
+      }
+
+      .hero-v10__headline h1 span {
+        display: block;
+        white-space: nowrap;
+      }
+
+      .hero-v10__headline h1 span:last-child {
+        margin-top: 0.12em;
+        font-weight: 400;
+        letter-spacing: 0.06em;
+      }
+
+      /* Floor UI */
+      .hero-v10__floor {
+        position: absolute;
+        z-index: 8;
+        left: var(--pad-x);
+        right: var(--pad-x);
+        bottom: clamp(1.25rem, 4vh, 2.75rem);
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 2rem;
+        pointer-events: none;
+      }
+
+      .hero-v10__floor > * {
+        pointer-events: auto;
+      }
+
+      .scroll-hint {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 0.65rem;
+        font-size: 0.625rem;
+        font-weight: 500;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        transition: color 0.35s var(--ease-out), transform 0.45s var(--ease-out);
+      }
+
+      .scroll-hint:hover {
+        color: var(--text);
+      }
+
+      .scroll-hint__arrow {
+        width: 1px;
+        height: 1.85rem;
+        margin-left: 0.125rem;
+        background: linear-gradient(
+          to bottom,
+          rgba(253, 251, 248, 0.55),
+          rgba(253, 251, 248, 0)
+        );
+        position: relative;
+      }
+
+      .scroll-hint__arrow::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 6px solid rgba(253, 251, 248, 0.55);
+      }
+
+      .cta-pill-outline {
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.85rem 1.35rem;
+        border: 1px solid var(--line-fine);
+        font-family: "Cinzel", serif;
+        font-size: 0.6875rem;
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--text);
+        transition:
+          border-color 0.35s var(--ease-out),
+          background 0.35s var(--ease-out),
+          gap 0.35s var(--ease-out);
+      }
+
+      .cta-pill-outline:hover,
+      .cta-pill-outline:focus-visible {
+        border-color: rgba(255, 255, 255, 0.88);
+        background: rgba(255, 255, 255, 0.05);
+        gap: 1.2rem;
+        outline: none;
+      }
+
+      .cta-pill-outline svg {
+        flex-shrink: 0;
+      }
+
+      @media (max-width: 900px) {
+        .topbar-v10__inner {
+          grid-template-columns: auto 1fr auto;
+          min-height: 5rem;
+        }
+
+        .topbar-v10__left .btn-outline-light {
+          display: none;
+        }
+
+        .topbar-v10__right .nav-hide-sm {
+          display: none;
+        }
+
+        .hero-v10__floor {
+          flex-direction: column;
+          align-items: stretch;
+          bottom: clamp(5rem, 12vh, 6.25rem);
+        }
+
+        .cta-pill-outline {
+          align-self: flex-end;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .brand-wordmark {
+          font-size: 0.82rem;
+          letter-spacing: 0.2em;
+        }
+
+        .hero-v10__headline h1 {
+          font-size: clamp(1.6rem, 8.6vw, 2.7rem);
+        }
+      }
+
+      /* Skip link */
+      .skip-link {
+        position: absolute;
+        left: var(--pad-x);
+        top: 0.75rem;
+        z-index: 30;
+        padding: 0.5rem 0.85rem;
+        background: var(--text);
+        color: var(--hero-ink);
+        font-size: 0.75rem;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+
+      .skip-link:focus {
+        clip: auto;
+        clip-path: none;
+        width: auto;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+    <main class="hero-v10" id="inicio">
+      <div class="hero-v10__media" aria-hidden="true">
+        <video
+          class="hero-v10__video"
+          src="hero-imgs/magnific_use-this-image-as-the-bas_2886030875.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+      </div>
+      <div class="hero-v10__veil" aria-hidden="true"></div>
+      <div class="hero-v10__grain" aria-hidden="true"></div>
+
+      <header class="topbar-v10">
+        <div class="topbar-v10__inner">
+          <div class="topbar-v10__left">
+            <button type="button" class="icon-btn-v10" aria-label="Abrir menu">
+              <span class="menu-lines" aria-hidden="true">
+                <span></span>
+                <span></span>
+              </span>
+            </button>
+            <a class="btn-outline-light" href="#packs">Ver packs</a>
+          </div>
+
+          <div class="brand-stack">
+            <a class="brand-stack__home" href="#inicio" aria-label="Aflora Club — início">
+              <span class="brand-emblem" aria-hidden="true">A</span>
+              <span class="brand-wordmark">spo aflora<span class="brand-club">.club</span></span>
+            </a>
+          </div>
+
+          <nav class="topbar-v10__right" aria-label="Utilitários">
+            <button
+              type="button"
+              class="nav-link-muted nav-hide-sm"
+              aria-label="Selecionar idioma"
+            >
+              PT
+              <span class="chevron" aria-hidden="true"></span>
+            </button>
+            <a class="nav-link-muted nav-hide-sm" href="#especies">
+              <svg
+                class="icon-sm"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.25"
+                aria-hidden="true"
+              >
+                <circle cx="11" cy="11" r="6.5" />
+                <path d="M16 16l4.25 4.25" stroke-linecap="square" />
+              </svg>
+              Buscar espécie
+            </a>
+            <a class="nav-link-muted nav-hide-sm" href="#contato">Contato</a>
+            <a
+              class="btn-outline-light"
+              href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20Quero%20fazer%20um%20pedido%20no%20Aflora%20Club."
+              target="_blank"
+              rel="noopener noreferrer"
+              >WhatsApp</a
+            >
+          </nav>
+        </div>
+      </header>
+
+      <div class="hero-v10__stage">
+        <div class="hero-v10__headline" id="conteudo">
+          <h1>
+            <span>Flores comestíveis</span>
+            <span>sob demanda</span>
+          </h1>
+        </div>
+
+        <div class="hero-v10__floor">
+          <a class="scroll-hint" href="#packs">
+            Role para baixo
+            <span class="scroll-hint__arrow" aria-hidden="true"></span>
+          </a>
+
+          <a class="cta-pill-outline" href="#packs">
+            Descubra os packs
+            <svg width="22" height="12" viewBox="0 0 22 12" fill="none" aria-hidden="true">
+              <path
+                d="M1 6h17M14 1l6 5-6 5"
+                stroke="currentColor"
+                stroke-width="1"
+                stroke-linecap="square"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <div id="packs" style="scroll-margin-top: 1rem" aria-hidden="true"></div>
+    <div id="especies" style="scroll-margin-top: 1rem" aria-hidden="true"></div>
+    <div id="contato" style="scroll-margin-top: 1rem" aria-hidden="true"></div>
+  </body>
+</html>

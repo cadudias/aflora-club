@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aflora Club | V8 Flores Comestiveis</title>
+    <meta
+      name="description"
+      content="Flores comestíveis frescas para restaurantes, cafés e hotéis em Porto Alegre."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --aflora-lilas-600: #a66bea;
+        --aflora-lilas-800: #6d35b3;
+        --aflora-roxo-900: #14071f;
+        --aflora-roxo-800: #2a0f40;
+        --aflora-roxo-700: #4f1f73;
+        --aflora-roxo-500: #8e49c9;
+        --aflora-lima-500: #d7f05b;
+        --aflora-pink-500: #f05fa8;
+        --aflora-cream-50: #fffdf8;
+        --aflora-cream-100: #f8f4eb;
+        --aflora-gray-600: #6b6872;
+        --aflora-ink-900: #19161f;
+        --aflora-white: #ffffff;
+        --success-whatsapp: #25d366;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Manrope", sans-serif;
+        color: var(--aflora-ink-900);
+        background: linear-gradient(
+          160deg,
+          var(--aflora-roxo-900) 0%,
+          #1f0b34 38%,
+          #351455 70%,
+          #4a1f70 100%
+        );
+        overflow-x: hidden;
+      }
+
+      .container {
+        width: min(1200px, calc(100% - 3rem));
+        margin: 0 auto;
+      }
+
+      .site-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 20;
+        background: linear-gradient(
+          to bottom,
+          rgba(17, 6, 28, 0.56),
+          rgba(17, 6, 28, 0.02)
+        );
+      }
+
+      .nav-wrap {
+        min-height: 88px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+      }
+
+      .brand {
+        font-family: "Outfit", sans-serif;
+        font-size: clamp(1.1rem, 1rem + 0.65vw, 1.55rem);
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        color: var(--aflora-white);
+        text-transform: lowercase;
+        text-decoration: none;
+        text-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+      }
+
+      .brand span {
+        color: var(--aflora-lilas-600);
+      }
+
+      .main-nav ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 1.3rem;
+      }
+
+      .main-nav a {
+        font-family: "Outfit", sans-serif;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 0.76rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        transition: color 0.2s ease;
+      }
+
+      .main-nav a:hover,
+      .main-nav a:focus-visible {
+        color: var(--aflora-lima-500);
+        outline: none;
+      }
+
+      .btn {
+        font-family: inherit;
+        font-weight: 700;
+        border: 0;
+        border-radius: 999px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        transition:
+          transform 0.18s ease,
+          filter 0.18s ease,
+          box-shadow 0.18s ease;
+      }
+
+      .btn:focus-visible {
+        outline: 2px solid var(--aflora-lilas-800);
+        outline-offset: 2px;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn-whatsapp {
+        background: rgba(166, 107, 234, 0.28);
+        color: var(--aflora-white);
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 0.62rem 1rem;
+        border: 1px solid rgba(166, 107, 234, 0.7);
+        backdrop-filter: blur(4px);
+      }
+
+      .hero {
+        min-height: 100vh;
+        height: 100dvh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+        background: radial-gradient(
+            circle at 85% 8%,
+            rgba(255, 203, 121, 0.22) 0 12%,
+            transparent 32%
+          ),
+          radial-gradient(
+            circle at 15% 15%,
+            rgba(223, 161, 255, 0.14) 0 14%,
+            transparent 35%
+          ),
+          linear-gradient(
+            165deg,
+            var(--aflora-roxo-900) 0%,
+            var(--aflora-roxo-800) 38%,
+            var(--aflora-roxo-700) 100%
+          );
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            circle at 30% 35%,
+            rgba(255, 241, 203, 0.2) 0%,
+            rgba(255, 241, 203, 0) 45%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(17, 6, 28, 0.18) 0%,
+            rgba(17, 6, 28, 0.38) 52%,
+            rgba(17, 6, 28, 0.68) 100%
+          );
+        z-index: 1;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: auto -10% -24% -10%;
+        height: 55%;
+        background:
+          radial-gradient(
+            ellipse at 20% 40%,
+            rgba(255, 228, 189, 0.26) 0 20%,
+            rgba(255, 228, 189, 0) 62%
+          ),
+          radial-gradient(
+            ellipse at 72% 52%,
+            rgba(255, 206, 155, 0.18) 0 18%,
+            rgba(255, 206, 155, 0) 58%
+          ),
+          linear-gradient(
+            to top,
+            rgba(255, 232, 210, 0.22) 0%,
+            rgba(255, 232, 210, 0) 70%
+          );
+        filter: blur(34px);
+        z-index: 1;
+      }
+
+      .hero-video,
+      .hero-decor {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+      }
+
+      .lantern {
+        position: absolute;
+        width: 82px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle at 50% 35%,
+          #ffd68f 0%,
+          #f4a24f 42%,
+          #9b4a1e 85%
+        );
+        box-shadow:
+          0 0 26px rgba(255, 180, 91, 0.45),
+          inset 0 -12px 20px rgba(81, 24, 5, 0.4);
+        opacity: 0.82;
+      }
+
+      .lantern::before {
+        content: "";
+        position: absolute;
+        width: 3px;
+        height: 80px;
+        background: rgba(255, 222, 190, 0.42);
+        left: 50%;
+        top: -84px;
+        transform: translateX(-50%);
+      }
+
+      .lantern::after {
+        content: "";
+        position: absolute;
+        width: 22px;
+        height: 11px;
+        background: rgba(111, 44, 20, 0.72);
+        border-radius: 10px;
+        left: 50%;
+        bottom: -8px;
+        transform: translateX(-50%);
+      }
+
+      .lantern-left {
+        top: 14%;
+        left: 6%;
+        transform: scale(1.18);
+      }
+
+      .lantern-right {
+        top: 12%;
+        right: 7%;
+        transform: scale(1);
+      }
+
+      .lantern-small {
+        top: 5%;
+        left: 21%;
+        width: 56px;
+        opacity: 0.72;
+      }
+
+      .hero-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8rem;
+        width: 100%;
+        min-height: 100%;
+        padding: clamp(6rem, 11vh, 8rem) 0 2.6rem;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-topline {
+        font-family: "Outfit", sans-serif;
+        font-size: 0.86rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(255, 250, 240, 0.86);
+        font-weight: 400;
+        margin-bottom: 0.25rem;
+        font-style: normal;
+      }
+
+      .hero-logo {
+        font-family: "Outfit", sans-serif;
+        font-size: clamp(1.05rem, 2vw, 1.45rem);
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        line-height: 1;
+        color: var(--aflora-white);
+        text-transform: uppercase;
+        text-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+        max-width: none;
+      }
+
+      .hero-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        padding: 0.42rem 0.75rem;
+        border-radius: 8px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        background: var(--aflora-lima-500);
+        color: var(--aflora-ink-900);
+        margin-bottom: 0.9rem;
+      }
+
+      .hero-content {
+        max-width: 640px;
+        margin-top: 0;
+        padding: 0;
+      }
+
+      .hero h1 {
+        font-family: "Outfit", sans-serif;
+        font-size: clamp(2.1rem, 7vw, 5rem);
+        line-height: 1.06;
+        letter-spacing: 0.015em;
+        color: #fff4dc;
+        margin-bottom: 0.7rem;
+        text-transform: none;
+        font-weight: 300;
+        text-shadow: 0 16px 32px rgba(37, 14, 58, 0.42);
+      }
+
+      .hero h1 strong {
+        display: block;
+        font-family: "Outfit", sans-serif;
+        font-size: 0.84em;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        font-weight: 600;
+      }
+
+      .hero p {
+        font-size: clamp(0.85rem, 1.08vw, 1rem);
+        color: rgba(255, 245, 225, 0.92);
+        line-height: 1.4;
+        max-width: 38ch;
+        margin-inline: auto;
+      }
+
+      .hero-actions {
+        position: absolute;
+        left: 50%;
+        bottom: 1.5rem;
+        transform: translateX(-50%);
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 0.8rem;
+        z-index: 3;
+        width: min(640px, 100%);
+        pointer-events: none;
+      }
+
+      .hero-actions .btn {
+        pointer-events: auto;
+      }
+
+      .btn-primary {
+        background: rgba(236, 202, 255, 0.16);
+        color: #fff8f0;
+        padding: 0.72rem 1.3rem;
+        border-radius: 999px;
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border: 1px solid rgba(255, 222, 253, 0.45);
+        box-shadow: 0 12px 26px rgba(20, 6, 32, 0.28);
+        backdrop-filter: blur(6px);
+      }
+
+      .btn-primary:hover {
+        filter: brightness(0.93);
+      }
+
+      .btn-secondary {
+        display: none;
+      }
+
+      .hero-card {
+        display: none;
+      }
+
+      .hero-card h2 {
+        font-family: "Outfit", sans-serif;
+        font-size: 1.12rem;
+        margin-bottom: 0.6rem;
+        color: var(--aflora-white);
+      }
+
+      .hero-card ul {
+        list-style: none;
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      .hero-card li {
+        padding: 0.66rem 0.72rem;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.85);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        font-size: 0.86rem;
+        font-weight: 700;
+      }
+
+      .hero-card small {
+        margin-top: 0.75rem;
+        display: block;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 0.78rem;
+      }
+
+      .scroll-cue {
+        color: rgba(255, 246, 229, 0.9);
+        font-size: 0.72rem;
+        letter-spacing: 0.05em;
+        text-transform: none;
+        font-weight: 500;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.3rem;
+        pointer-events: none;
+      }
+
+      .scroll-cue::after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-right: 2px solid rgba(255, 246, 229, 0.92);
+        border-bottom: 2px solid rgba(255, 246, 229, 0.92);
+        transform: rotate(45deg);
+        animation: scroll-arrow-bounce 1.2s ease-in-out infinite;
+      }
+
+      @keyframes scroll-arrow-bounce {
+        0%,
+        100% {
+          transform: rotate(45deg) translate(0, 0);
+          opacity: 0.9;
+        }
+        50% {
+          transform: rotate(45deg) translate(4px, 4px);
+          opacity: 0.55;
+        }
+      }
+
+      @media (max-width: 980px) {
+        .main-nav {
+          display: none;
+        }
+
+        .nav-wrap {
+          min-height: 76px;
+        }
+
+        .hero {
+          height: auto;
+          min-height: 100vh;
+        }
+
+        .hero-grid {
+          row-gap: 0.9rem;
+          padding-top: 6.1rem;
+          padding-bottom: 1rem;
+        }
+
+        .hero-actions {
+          bottom: 1rem;
+        }
+
+        .hero-logo {
+          font-size: clamp(0.95rem, 4.8vw, 1.2rem);
+        }
+
+        .hero-content {
+          margin: 0.4rem 0 0;
+          max-width: 100%;
+        }
+
+        .hero-topline {
+          margin-bottom: 0.5rem;
+        }
+
+        .hero h1 {
+          font-size: clamp(2rem, 10vw, 3.2rem);
+        }
+
+        .hero p {
+          max-width: 27ch;
+        }
+
+        .hero-actions {
+          align-items: center;
+          width: calc(100% - 2rem);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="#">aflora<span>.club</span></a>
+
+        <nav class="main-nav" aria-label="Menu principal">
+          <ul>
+            <li><a href="#inicio">Intro</a></li>
+            <li><a href="#packs">Packs</a></li>
+            <li><a href="#produto">Produto</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+
+        <a
+          class="btn btn-whatsapp"
+          href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20Quero%20fazer%20um%20pedido%20de%20flores%20comest%C3%ADveis."
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Falar no WhatsApp"
+        >
+          WhatsApp
+        </a>
+      </div>
+    </header>
+
+    <main id="inicio">
+      <section class="hero">
+        <div class="hero-decor" aria-hidden="true">
+          <div class="lantern lantern-left"></div>
+          <div class="lantern lantern-right"></div>
+          <div class="lantern lantern-small"></div>
+        </div>
+        <div class="container hero-grid">
+          <div class="hero-topline">Aflora Club</div>
+
+          <div class="hero-content">
+            <h1>Capture a <strong>magia das flores</strong></h1>
+            <p>
+              Turn on de criatividade para uma experiência sensorial com flores
+              comestíveis.
+            </p>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#packs">Explorar packs</a>
+            <a
+              class="btn btn-secondary"
+              href="https://wa.me/5551999999999?text=Ol%C3%A1%21%20Quero%20conhecer%20os%20packs%20de%20flores%20comest%C3%ADveis."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Pedir no WhatsApp
+            </a>
+            <div class="scroll-cue">Role para continuar</div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

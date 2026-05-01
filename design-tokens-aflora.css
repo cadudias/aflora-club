@@ -1,0 +1,130 @@
+:root {
+  /* Brand core */
+  --aflora-lilas-600: #a66bea;
+  --aflora-lilas-800: #6d35b3;
+  --aflora-lima-500: #d7f05b;
+  --aflora-pink-500: #f05fa8;
+  --aflora-verde-500: #5c8f3a;
+
+  /* Neutrals */
+  --aflora-cream-50: #fffdf8;
+  --aflora-cream-100: #f8f4eb;
+  --aflora-gray-600: #6b6872;
+  --aflora-ink-900: #19161f;
+  --aflora-white: #ffffff;
+
+  /* Semantic */
+  --success-whatsapp: #25d366;
+  --warning-harvest: #e6b94a;
+  --error-stock: #c64a57;
+
+  /* Typography */
+  --font-display: "Outfit", "Segoe UI", sans-serif;
+  --font-body: "Manrope", "Segoe UI", sans-serif;
+  --fs-display: clamp(2.2rem, 4vw, 4.5rem);
+  --fs-h1: clamp(1.8rem, 3vw, 3rem);
+  --fs-h2: clamp(1.35rem, 2.2vw, 2.1rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Radius */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  /* Elevation */
+  --shadow-soft: 0 8px 24px rgba(25, 22, 31, 0.08);
+  --shadow-float: 0 18px 40px rgba(109, 53, 179, 0.22);
+
+  /* Gradients */
+  --gradient-hero-aflora: linear-gradient(
+    135deg,
+    #6d35b3 0%,
+    #a66bea 38%,
+    #f05fa8 68%,
+    #d7f05b 100%
+  );
+  --gradient-card-flora: linear-gradient(
+    160deg,
+    #fffdf8 0%,
+    #f8f4eb 40%,
+    #eaf7b8 100%
+  );
+  --gradient-overlay-photo: linear-gradient(
+    180deg,
+    rgba(25, 22, 31, 0.08) 0%,
+    rgba(25, 22, 31, 0.58) 100%
+  );
+
+  /**
+   * Hero index-v11: 10 variantes de fundo (somente texto claro / #eef5e7 como hoje).
+   * Troca a ativa assim: numa linha só,
+   *   --hero-v11-background: var(--hero-bg-08);
+   */
+  --hero-bg-01: linear-gradient(165deg, #152a18 0%, #1d3a1f 48%, #162f1a 100%);
+  --hero-bg-02: linear-gradient(148deg, #12332c 0%, #174038 52%, #1a2f28 100%);
+  --hero-bg-03: linear-gradient(172deg, #1c2718 0%, #263622 45%, #1e2a17 100%);
+  --hero-bg-04: linear-gradient(158deg, #1a2420 0%, #27322c 55%, #1c2621 100%);
+  --hero-bg-05: linear-gradient(138deg, #242018 0%, #2a2820 40%, #1e221c 100%);
+  --hero-bg-06: radial-gradient(120% 100% at 12% 0%, #1e3224 0%, #152519 52%, #101c14 100%);
+  --hero-bg-07: linear-gradient(168deg, #1a2628 0%, #253132 48%, #1a2226 100%);
+  --hero-bg-08: linear-gradient(156deg, #18251c 8%, #324d38 50%, #152218 92%);
+  --hero-bg-09: linear-gradient(165deg, #1f1f24 0%, #28242c 42%, #1a1e22 100%);
+  --hero-bg-10: linear-gradient(
+    160deg,
+    #1e2f22 0%,
+    rgba(92, 143, 58, 0.28) 45%,
+    #162318 100%
+  );
+
+  --hero-v11-background: var(--hero-bg-08);
+
+  /**
+   * Secção Sobre (index-v11 #sobre): 10 variantes (texto creme atual).
+   * Ativa via --about-section-background (troca NN em var(--about-bg-NN)).
+   */
+  --about-bg-01: linear-gradient(
+    160deg,
+    var(--aflora-lilas-800) 0%,
+    var(--aflora-lilas-600) 55%,
+    #9356d4 100%
+  );
+  --about-bg-02: linear-gradient(145deg, #483670 0%, #5f4888 46%, var(--aflora-lilas-600) 100%);
+  --about-bg-03: linear-gradient(168deg, #0a565a 0%, #0d6f74 50%, #0a4f52 100%);
+  --about-bg-04: linear-gradient(152deg, #39542e 0%, #486c3a 50%, var(--aflora-verde-500) 100%);
+  --about-bg-05: linear-gradient(155deg, #5c3f56 0%, #755462 52%, #4d3f51 100%);
+  --about-bg-06: linear-gradient(170deg, #2a3a52 0%, #3a5470 48%, #253344 100%);
+  --about-bg-07: radial-gradient(115% 120% at 88% -5%, #6f4f68 0%, #4f3f58 52%, #352839 100%);
+  --about-bg-08: linear-gradient(158deg, #493d72 0%, #624090 52%, var(--aflora-lilas-800) 100%);
+  --about-bg-09: linear-gradient(162deg, #1a5a54 0%, #238074 52%, #185550 100%);
+  --about-bg-10: linear-gradient(148deg, #39324c 0%, #483c62 52%, var(--aflora-lilas-800) 100%);
+
+  --about-section-background: #ffffff;
+
+  /**
+   * Secção 3 (packs-split): fundo fixo claro (index-v11).
+   */
+  --packs3-bg-01: #0a5c61;
+  --packs3-bg-02: #0d6f74;
+  --packs3-bg-03: #0f5558;
+  --packs3-bg-04: #13524c;
+  --packs3-bg-05: #1e403c;
+  --packs3-bg-06: #11696d;
+  --packs3-bg-07: #184238;
+  --packs3-bg-08: #2b6b60;
+  --packs3-media-bg: #eef5e7;
+
+  --packs3-section-background: #eef5e7;
+  --packs3-copy-background: #eef5e7;
+}

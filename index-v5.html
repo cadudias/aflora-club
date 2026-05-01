@@ -18,6 +18,10 @@
       :root {
         --aflora-lilas-600: #a66bea;
         --aflora-lilas-800: #6d35b3;
+        --aflora-roxo-900: #14071f;
+        --aflora-roxo-800: #2a0f40;
+        --aflora-roxo-700: #4f1f73;
+        --aflora-roxo-500: #8e49c9;
         --aflora-lima-500: #d7f05b;
         --aflora-pink-500: #f05fa8;
         --aflora-cream-50: #fffdf8;
@@ -37,7 +41,13 @@
       body {
         font-family: "Manrope", sans-serif;
         color: var(--aflora-ink-900);
-        background: #17161c;
+        background: linear-gradient(
+          160deg,
+          var(--aflora-roxo-900) 0%,
+          #1f0b34 38%,
+          #351455 70%,
+          #4a1f70 100%
+        );
         overflow-x: hidden;
       }
 
@@ -54,8 +64,8 @@
         z-index: 20;
         background: linear-gradient(
           to bottom,
-          rgba(0, 0, 0, 0.48),
-          rgba(0, 0, 0, 0.02)
+          rgba(17, 6, 28, 0.56),
+          rgba(17, 6, 28, 0.02)
         );
       }
 
@@ -150,54 +160,157 @@
         justify-content: center;
         overflow: hidden;
         position: relative;
-        background: #15131b;
+        background: radial-gradient(
+            circle at 85% 8%,
+            rgba(255, 203, 121, 0.22) 0 12%,
+            transparent 32%
+          ),
+          radial-gradient(
+            circle at 15% 15%,
+            rgba(223, 161, 255, 0.14) 0 14%,
+            transparent 35%
+          ),
+          linear-gradient(
+            165deg,
+            var(--aflora-roxo-900) 0%,
+            var(--aflora-roxo-800) 38%,
+            var(--aflora-roxo-700) 100%
+          );
       }
 
       .hero::before {
         content: "";
         position: absolute;
         inset: 0;
-        background: linear-gradient(
-          180deg,
-          rgba(8, 8, 10, 0.58) 0%,
-          rgba(8, 8, 10, 0.42) 42%,
-          rgba(8, 8, 10, 0.74) 100%
-        );
+        background:
+          radial-gradient(
+            circle at 30% 35%,
+            rgba(255, 241, 203, 0.2) 0%,
+            rgba(255, 241, 203, 0) 45%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(17, 6, 28, 0.18) 0%,
+            rgba(17, 6, 28, 0.38) 52%,
+            rgba(17, 6, 28, 0.68) 100%
+          );
         z-index: 1;
       }
 
-      .hero-video {
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: auto -10% -24% -10%;
+        height: 55%;
+        background:
+          radial-gradient(
+            ellipse at 20% 40%,
+            rgba(255, 228, 189, 0.26) 0 20%,
+            rgba(255, 228, 189, 0) 62%
+          ),
+          radial-gradient(
+            ellipse at 72% 52%,
+            rgba(255, 206, 155, 0.18) 0 18%,
+            rgba(255, 206, 155, 0) 58%
+          ),
+          linear-gradient(
+            to top,
+            rgba(255, 232, 210, 0.22) 0%,
+            rgba(255, 232, 210, 0) 70%
+          );
+        filter: blur(34px);
+        z-index: 1;
+      }
+
+      .hero-video,
+      .hero-decor {
         position: absolute;
         inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
         z-index: 0;
       }
 
+      .lantern {
+        position: absolute;
+        width: 82px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle at 50% 35%,
+          #ffd68f 0%,
+          #f4a24f 42%,
+          #9b4a1e 85%
+        );
+        box-shadow:
+          0 0 26px rgba(255, 180, 91, 0.45),
+          inset 0 -12px 20px rgba(81, 24, 5, 0.4);
+        opacity: 0.82;
+      }
+
+      .lantern::before {
+        content: "";
+        position: absolute;
+        width: 3px;
+        height: 80px;
+        background: rgba(255, 222, 190, 0.42);
+        left: 50%;
+        top: -84px;
+        transform: translateX(-50%);
+      }
+
+      .lantern::after {
+        content: "";
+        position: absolute;
+        width: 22px;
+        height: 11px;
+        background: rgba(111, 44, 20, 0.72);
+        border-radius: 10px;
+        left: 50%;
+        bottom: -8px;
+        transform: translateX(-50%);
+      }
+
+      .lantern-left {
+        top: 14%;
+        left: 6%;
+        transform: scale(1.18);
+      }
+
+      .lantern-right {
+        top: 12%;
+        right: 7%;
+        transform: scale(1);
+      }
+
+      .lantern-small {
+        top: 5%;
+        left: 21%;
+        width: 56px;
+        opacity: 0.72;
+      }
+
       .hero-grid {
-        display: grid;
-        grid-template-columns: minmax(280px, 560px) 1fr;
-        align-content: center;
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        row-gap: 0.5rem;
+        justify-content: center;
+        gap: 0.8rem;
         width: 100%;
         min-height: 100%;
-        padding: clamp(6rem, 11vh, 8rem) 0 2rem;
-        text-align: left;
+        padding: clamp(6rem, 11vh, 8rem) 0 2.6rem;
+        text-align: center;
         position: relative;
         z-index: 2;
       }
 
       .hero-topline {
-        font-size: 0.7rem;
-        letter-spacing: 0.28em;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.86);
-        font-weight: 700;
-        margin-bottom: 0.1rem;
-        grid-column: 1;
-        justify-self: start;
+        font-size: 0.86rem;
+        letter-spacing: 0.06em;
+        text-transform: none;
+        color: rgba(255, 250, 240, 0.86);
+        font-weight: 500;
+        margin-bottom: 0.25rem;
+        font-family: "Times New Roman", serif;
+        font-style: italic;
       }
 
       .hero-logo {
@@ -227,43 +340,52 @@
 
       .hero-content {
         max-width: 640px;
-        margin-top: 0.15rem;
+        margin-top: 0;
         padding: 0;
-        grid-column: 1;
-        justify-self: start;
       }
 
       .hero h1 {
+        font-family: "Times New Roman", serif;
+        font-size: clamp(2.1rem, 7vw, 5rem);
+        line-height: 0.98;
+        letter-spacing: 0.02em;
+        color: #fff4dc;
+        margin-bottom: 0.7rem;
+        text-transform: none;
+        font-weight: 500;
+        text-shadow: 0 16px 32px rgba(37, 14, 58, 0.42);
+      }
+
+      .hero h1 strong {
+        display: block;
         font-family: "Syne", sans-serif;
-        font-size: clamp(1.55rem, 4.4vw, 3.2rem);
-        line-height: 1.02;
-        letter-spacing: 0.08em;
-        color: var(--aflora-white);
-        margin-bottom: 0.55rem;
-        max-width: 13ch;
+        font-size: 0.84em;
         text-transform: uppercase;
+        letter-spacing: 0.04em;
+        font-weight: 700;
       }
 
       .hero p {
-        font-size: clamp(0.82rem, 0.95vw, 0.9rem);
-        color: rgba(255, 255, 255, 0.84);
+        font-size: clamp(0.85rem, 1.08vw, 1rem);
+        color: rgba(255, 245, 225, 0.92);
         line-height: 1.4;
-        max-width: 32ch;
+        max-width: 38ch;
+        margin-inline: auto;
       }
 
       .hero-actions {
         position: absolute;
-        left: 0;
+        left: 50%;
         bottom: 1.5rem;
-        transform: none;
+        transform: translateX(-50%);
         margin-top: 0;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         justify-content: flex-end;
         gap: 0.8rem;
         z-index: 3;
-        width: min(560px, 100%);
+        width: min(640px, 100%);
         pointer-events: none;
       }
 
@@ -272,14 +394,16 @@
       }
 
       .btn-primary {
-        background: var(--aflora-lilas-600);
-        color: var(--aflora-white);
+        background: rgba(236, 202, 255, 0.16);
+        color: #fff8f0;
         padding: 0.72rem 1.3rem;
-        border-radius: 0;
+        border-radius: 999px;
         font-size: 0.72rem;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-        box-shadow: 0 12px 26px rgba(0, 0, 0, 0.28);
+        border: 1px solid rgba(255, 222, 253, 0.45);
+        box-shadow: 0 12px 26px rgba(20, 6, 32, 0.28);
+        backdrop-filter: blur(6px);
       }
 
       .btn-primary:hover {
@@ -324,11 +448,11 @@
       }
 
       .scroll-cue {
-        color: rgba(255, 255, 255, 0.88);
+        color: rgba(255, 246, 229, 0.9);
         font-size: 0.72rem;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: none;
+        font-weight: 500;
         display: inline-flex;
         flex-direction: column;
         align-items: center;
@@ -340,8 +464,8 @@
         content: "";
         width: 10px;
         height: 10px;
-        border-right: 2px solid rgba(255, 255, 255, 0.92);
-        border-bottom: 2px solid rgba(255, 255, 255, 0.92);
+        border-right: 2px solid rgba(255, 246, 229, 0.92);
+        border-bottom: 2px solid rgba(255, 246, 229, 0.92);
         transform: rotate(45deg);
         animation: scroll-arrow-bounce 1.2s ease-in-out infinite;
       }
@@ -373,7 +497,6 @@
         }
 
         .hero-grid {
-          grid-template-columns: 1fr;
           row-gap: 0.9rem;
           padding-top: 6.1rem;
           padding-bottom: 1rem;
@@ -392,25 +515,19 @@
           max-width: 100%;
         }
 
-        .hero-topline,
-        .hero-content {
-          justify-self: center;
-          text-align: center;
+        .hero-topline {
+          margin-bottom: 0.5rem;
         }
 
         .hero h1 {
-          font-size: clamp(1.38rem, 8.2vw, 2rem);
-          margin-inline: auto;
+          font-size: clamp(2rem, 10vw, 3.2rem);
         }
 
         .hero p {
           max-width: 27ch;
-          margin-inline: auto;
         }
 
         .hero-actions {
-          left: 50%;
-          transform: translateX(-50%);
           align-items: center;
           width: calc(100% - 2rem);
         }
@@ -445,22 +562,19 @@
 
     <main id="inicio">
       <section class="hero">
-        <video
-          class="hero-video"
-          src="hero-imgs/magnific_use-this-image-as-the-bas_2886030875.mp4"
-          autoplay
-          muted
-          loop
-          playsinline
-          aria-hidden="true"
-        ></video>
+        <div class="hero-decor" aria-hidden="true">
+          <div class="lantern lantern-left"></div>
+          <div class="lantern lantern-right"></div>
+          <div class="lantern lantern-small"></div>
+        </div>
         <div class="container hero-grid">
-          <div class="hero-topline">Flores comestíveis</div>
+          <div class="hero-topline">Aflora Club</div>
 
           <div class="hero-content">
-            <h1>Para chefs, negócios e criativos</h1>
+            <h1>Capture a <strong>magia das flores</strong></h1>
             <p>
-              Pedidos pelo WhatsApp, sob encomenda.
+              Turn on de criatividade para uma experiência sensorial com flores
+              comestíveis.
             </p>
           </div>
 
@@ -474,7 +588,7 @@
             >
               Pedir no WhatsApp
             </a>
-            <div class="scroll-cue">Scroll para continuar</div>
+            <div class="scroll-cue">Role para continuar</div>
           </div>
 
         </div>

@@ -1,0 +1,963 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aflora Club | Flores comestíveis para gastronomia em Porto Alegre</title>
+    <meta name="description" content="Flores comestíveis e PANCs cultivadas sob demanda em Porto Alegre, com práticas 100% agroecológicas. Packs para restaurantes, cafés, confeitarias e hotéis." />
+    <meta property="og:title" content="Aflora Club — Flores comestíveis para gastronomia" />
+    <meta property="og:description" content="Colheita sob demanda, cultivo agroecológico e entrega em Porto Alegre." />
+    <meta property="og:image" content="images/novas/hero1-sq.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      /* ============ Design tokens v2 — Botanical Editorial ============ */
+      :root {
+        --cream: #faf6ef;
+        --cream-2: #f3ede1;
+        --white: #ffffff;
+        --green-950: #13231a;
+        --green-900: #1b3022;
+        --green-700: #2e4a36;
+        --ink: #1b3022;
+        --text: #3c5244;
+        --text-soft: #58705f;
+        --lilac-800: #6d35b3;
+        --lilac-700: #5b2a99;
+        --lilac-300: #c9a8ef;
+        --lilac-100: #efe6fa;
+        --lime: #d7f05b;
+        --pink: #f05fa8;
+        --border: rgba(27, 48, 34, 0.14);
+        --border-dark: rgba(250, 246, 239, 0.16);
+        --font-display: "Fraunces", Georgia, serif;
+        --font-body: "Manrope", "Segoe UI", sans-serif;
+        --radius-md: 16px;
+        --radius-lg: 24px;
+        --radius-pill: 999px;
+        --shadow-soft: 0 10px 30px rgba(27, 48, 34, 0.08);
+        --shadow-lift: 0 24px 50px rgba(27, 48, 34, 0.14);
+        --header-h: 76px;
+        --section-pad: clamp(4.5rem, 9vw, 7.5rem);
+        --wrap: min(1160px, 100% - 2.5rem);
+        --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 16px); }
+      body {
+        font-family: var(--font-body);
+        font-size: 1rem;
+        line-height: 1.65;
+        color: var(--text);
+        background: var(--cream);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+      img { display: block; max-width: 100%; }
+      a { color: inherit; text-decoration: none; }
+      ul { list-style: none; }
+      button { font: inherit; background: none; border: none; cursor: pointer; color: inherit; }
+
+      :focus-visible { outline: 3px solid var(--lilac-800); outline-offset: 3px; border-radius: 4px; }
+      .on-dark :focus-visible, .on-dark:focus-visible { outline-color: var(--lime); }
+
+      .skip-link {
+        position: absolute; left: 1rem; top: -100px; z-index: 100;
+        background: var(--green-900); color: var(--cream);
+        padding: 0.7rem 1.2rem; border-radius: var(--radius-pill);
+        transition: top 0.2s var(--ease-out);
+      }
+      .skip-link:focus { top: 1rem; }
+
+      .wrap { width: var(--wrap); margin-inline: auto; }
+
+      h1, h2, h3 { font-family: var(--font-display); font-weight: 500; color: var(--ink); line-height: 1.1; letter-spacing: -0.01em; }
+
+      .eyebrow {
+        display: inline-flex; align-items: center; gap: 0.55rem;
+        font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+        color: var(--lilac-800);
+      }
+      .eyebrow::before { content: ""; width: 22px; height: 2px; background: var(--lilac-800); border-radius: 2px; }
+      .on-dark .eyebrow { color: var(--lime); }
+      .on-dark .eyebrow::before { background: var(--lime); }
+
+      /* ============ Buttons ============ */
+      .btn {
+        display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem;
+        min-height: 48px; padding: 0.75rem 1.5rem;
+        border-radius: var(--radius-pill);
+        font-weight: 700; font-size: 0.95rem; letter-spacing: 0.01em;
+        border: 1.5px solid transparent;
+        cursor: pointer;
+        transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+      }
+      .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+      .btn-primary { background: var(--lilac-800); color: #fff; box-shadow: 0 10px 24px rgba(109, 53, 179, 0.28); }
+      .btn-primary:hover { background: var(--lilac-700); box-shadow: 0 12px 28px rgba(109, 53, 179, 0.36); }
+      .btn-ghost { border-color: rgba(27, 48, 34, 0.32); color: var(--ink); }
+      .btn-ghost:hover { background: rgba(27, 48, 34, 0.06); }
+      .on-dark .btn-ghost { border-color: var(--border-dark); color: var(--cream); }
+      .on-dark .btn-ghost:hover { background: rgba(250, 246, 239, 0.1); }
+      .btn-lime { background: var(--lime); color: var(--green-950); }
+      .btn-lime:hover { background: #cbe84a; }
+
+      .link-arrow {
+        display: inline-flex; align-items: center; gap: 0.45rem;
+        font-weight: 700; color: var(--lilac-800);
+        border-bottom: 2px solid transparent; padding-bottom: 2px;
+        transition: border-color 0.2s ease;
+      }
+      .link-arrow:hover { border-color: var(--lilac-800); }
+      .link-arrow svg { width: 16px; height: 16px; transition: transform 0.2s var(--ease-out); }
+      .link-arrow:hover svg { transform: translateX(3px); }
+
+      /* ============ Header ============ */
+      .site-header {
+        position: fixed; inset: 0 0 auto 0; z-index: 50;
+        height: var(--header-h);
+        background: rgba(250, 246, 239, 0.86);
+        -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.25s ease, box-shadow 0.25s ease;
+      }
+      .site-header.is-scrolled { border-color: var(--border); box-shadow: 0 6px 24px rgba(27, 48, 34, 0.06); }
+      .header-inner { width: var(--wrap); margin-inline: auto; height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+      .brand { display: inline-flex; align-items: center; gap: 0.65rem; }
+      .brand img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(27, 48, 34, 0.18); }
+      .brand-name { font-family: var(--font-display); font-size: 1.45rem; font-weight: 600; color: var(--ink); text-transform: lowercase; }
+      .brand-name span { color: var(--lilac-800); }
+
+      .main-nav ul { display: flex; align-items: center; gap: 1.9rem; }
+      .main-nav a {
+        font-size: 0.92rem; font-weight: 600; color: var(--text);
+        padding: 0.4rem 0; position: relative;
+        transition: color 0.2s ease;
+      }
+      .main-nav a::after {
+        content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 2px;
+        background: var(--lilac-800); border-radius: 2px;
+        transform: scaleX(0); transform-origin: left;
+        transition: transform 0.25s var(--ease-out);
+      }
+      .main-nav a:hover { color: var(--ink); }
+      .main-nav a:hover::after { transform: scaleX(1); }
+      .header-cta { display: inline-flex; }
+      .header-cta .btn { min-height: 44px; padding: 0.6rem 1.2rem; font-size: 0.88rem; }
+
+      .nav-toggle {
+        display: none;
+        width: 48px; height: 48px;
+        align-items: center; justify-content: center;
+        border-radius: 12px;
+      }
+      .nav-toggle:hover { background: rgba(27, 48, 34, 0.06); }
+      .nav-toggle svg { width: 26px; height: 26px; }
+      .nav-toggle .icon-close { display: none; }
+      .nav-toggle[aria-expanded="true"] .icon-menu { display: none; }
+      .nav-toggle[aria-expanded="true"] .icon-close { display: block; }
+
+      @media (max-width: 900px) {
+        .nav-toggle { display: inline-flex; }
+        .header-cta { display: none; }
+        .main-nav {
+          position: fixed; top: var(--header-h); left: 0; right: 0; z-index: 49;
+          background: var(--cream);
+          border-bottom: 1px solid var(--border);
+          box-shadow: 0 24px 40px rgba(27, 48, 34, 0.12);
+          padding: 0.8rem 1.25rem 1.4rem;
+          display: none;
+        }
+        .main-nav.is-open { display: block; }
+        .main-nav ul { flex-direction: column; align-items: stretch; gap: 0; }
+        .main-nav li + li { border-top: 1px solid var(--border); }
+        .main-nav a { display: block; padding: 0.95rem 0.4rem; font-size: 1.05rem; }
+        .main-nav a::after { display: none; }
+        .main-nav .nav-cta-mobile { margin-top: 1rem; border-top: 0 !important; }
+        .main-nav .nav-cta-mobile .btn { width: 100%; }
+      }
+
+      /* ============ Hero ============ */
+      .hero {
+        position: relative;
+        background:
+          radial-gradient(90% 70% at 85% -10%, rgba(215, 240, 91, 0.1) 0%, rgba(215, 240, 91, 0) 55%),
+          radial-gradient(80% 90% at -10% 110%, rgba(166, 107, 234, 0.16) 0%, rgba(166, 107, 234, 0) 50%),
+          linear-gradient(156deg, #18251c 8%, #2c4632 52%, #142219 92%);
+        color: var(--cream);
+        padding: calc(var(--header-h) + clamp(2.5rem, 6vw, 4.5rem)) 0 clamp(3rem, 7vw, 5.5rem);
+        overflow: hidden;
+      }
+      .hero-grid {
+        display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+        gap: clamp(2.5rem, 5vw, 4.5rem); align-items: center;
+      }
+      @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
+
+      .hero-title {
+        margin-top: 1.3rem;
+        font-size: clamp(2.5rem, 5.2vw, 4rem);
+        color: var(--cream);
+        max-width: 15ch;
+      }
+      .hero-title em { font-style: italic; color: var(--lime); }
+      .hero-lede { margin-top: 1.4rem; max-width: 48ch; font-size: 1.08rem; line-height: 1.7; color: rgba(250, 246, 239, 0.85); }
+      .hero-actions { margin-top: 2.2rem; display: flex; flex-wrap: wrap; gap: 0.8rem; }
+
+      .hero-trust { margin-top: 2.6rem; padding-top: 1.6rem; border-top: 1px solid var(--border-dark); display: flex; flex-wrap: wrap; gap: 1.1rem 2.2rem; }
+      .hero-trust li { display: flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; font-weight: 600; color: rgba(250, 246, 239, 0.88); }
+      .hero-trust svg { width: 19px; height: 19px; color: var(--lime); flex-shrink: 0; }
+
+      .hero-visual { position: relative; }
+      .hero-frame {
+        position: relative; overflow: hidden;
+        border-radius: var(--radius-lg);
+        aspect-ratio: 4 / 4.6;
+        box-shadow: var(--shadow-lift);
+      }
+      @media (max-width: 900px) { .hero-frame { aspect-ratio: 4 / 3.2; } }
+      .hero-frame::after {
+        content: ""; position: absolute; inset: 0;
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(250, 246, 239, 0.22);
+        pointer-events: none;
+      }
+      .hero-visual::before {
+        content: ""; position: absolute; inset: 1.1rem -1.1rem -1.1rem 1.1rem;
+        border: 1.5px solid rgba(215, 240, 91, 0.35);
+        border-radius: var(--radius-lg);
+        pointer-events: none;
+      }
+
+      .carousel-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.9s ease; }
+      .carousel-slide.is-active { opacity: 1; }
+      .carousel-slide img { width: 100%; height: 100%; object-fit: cover; }
+      .carousel-dots {
+        position: absolute; left: 50%; bottom: 1rem; transform: translateX(-50%);
+        display: flex; gap: 0.45rem; z-index: 2;
+        background: rgba(19, 35, 26, 0.45);
+        -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+        padding: 0.5rem 0.7rem; border-radius: var(--radius-pill);
+      }
+      .carousel-dot {
+        width: 30px; height: 30px; margin: -10px;
+        display: inline-flex; align-items: center; justify-content: center;
+        cursor: pointer;
+      }
+      .carousel-dot::before {
+        content: ""; width: 8px; height: 8px; border-radius: 50%;
+        background: rgba(250, 246, 239, 0.5);
+        transition: background-color 0.2s ease, transform 0.2s ease;
+      }
+      .carousel-dot:hover::before { background: rgba(250, 246, 239, 0.85); }
+      .carousel-dot[aria-current="true"]::before { background: var(--lime); transform: scale(1.25); }
+
+      /* ============ Sections base ============ */
+      .section { padding: var(--section-pad) 0; }
+      .section-head { max-width: 62ch; margin-bottom: clamp(2.2rem, 5vw, 3.5rem); }
+      .section-head.center { margin-inline: auto; text-align: center; }
+      .section-head.center .eyebrow { justify-content: center; }
+      .section-title { margin-top: 1rem; font-size: clamp(1.9rem, 3.6vw, 2.8rem); }
+      .section-sub { margin-top: 1rem; color: var(--text-soft); }
+
+      /* ============ Sobre ============ */
+      .about { background: var(--cream); }
+      .about-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2.5rem, 6vw, 5rem); align-items: center; }
+      @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; } }
+      .about-media { position: relative; padding: 0 1.2rem 2.2rem 0; }
+      .about-photo-main {
+        width: 100%; aspect-ratio: 3 / 3.4; object-fit: cover;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-lift);
+      }
+      .about-photo-float {
+        position: absolute; right: -0.4rem; bottom: 0;
+        width: clamp(150px, 38%, 230px); aspect-ratio: 3 / 4; object-fit: cover;
+        border-radius: var(--radius-md);
+        border: 6px solid var(--cream);
+        box-shadow: var(--shadow-lift);
+        transform: rotate(3deg);
+      }
+      .about-badge {
+        position: absolute; left: 1.1rem; top: 1.1rem;
+        display: inline-flex; align-items: center; gap: 0.45rem;
+        background: rgba(250, 246, 239, 0.92);
+        color: var(--green-900);
+        font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+        padding: 0.5rem 0.85rem; border-radius: var(--radius-pill);
+        box-shadow: var(--shadow-soft);
+      }
+      .about-badge svg { width: 15px; height: 15px; color: var(--lilac-800); }
+      .about-text { margin-top: 1.1rem; }
+      .about-list { margin-top: 1.7rem; display: grid; gap: 0.85rem; }
+      .about-list li { display: flex; align-items: flex-start; gap: 0.7rem; font-weight: 600; color: var(--ink); }
+      .about-list svg { width: 21px; height: 21px; color: var(--lilac-800); flex-shrink: 0; margin-top: 2px; }
+      .about-cta { margin-top: 2rem; }
+
+      /* ============ Como funciona ============ */
+      .how { background: var(--white); border-block: 1px solid var(--border); }
+      .how-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; }
+      @media (max-width: 900px) { .how-grid { grid-template-columns: 1fr; } }
+      .how-card {
+        position: relative;
+        background: var(--cream);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 1.8rem 1.6rem 1.7rem;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+      .how-card:hover { border-color: var(--lilac-300); box-shadow: var(--shadow-soft); }
+      .how-step {
+        font-family: var(--font-display); font-size: 0.95rem; font-weight: 600;
+        color: var(--lilac-800);
+        display: inline-flex; align-items: center; gap: 0.6rem;
+      }
+      .how-step::after { content: ""; width: 30px; height: 1.5px; background: var(--lilac-300); }
+      .how-icon {
+        margin-top: 1.2rem; width: 52px; height: 52px;
+        display: inline-flex; align-items: center; justify-content: center;
+        background: var(--lilac-100); border-radius: 14px;
+      }
+      .how-icon svg { width: 25px; height: 25px; color: var(--lilac-800); }
+      .how-card h3 { margin-top: 1rem; font-size: 1.3rem; }
+      .how-card p { margin-top: 0.6rem; font-size: 0.96rem; }
+
+      /* ============ Galeria ============ */
+      .gallery-section { background: var(--white); border-bottom: 1px solid var(--border); padding-bottom: var(--section-pad); }
+      .gallery {
+        display: grid; grid-auto-flow: column; grid-auto-columns: clamp(230px, 26vw, 320px);
+        gap: 1rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 0.4rem 0.2rem 1.2rem;
+        scrollbar-width: thin; scrollbar-color: var(--lilac-300) transparent;
+      }
+      .gallery figure { scroll-snap-align: start; position: relative; border-radius: var(--radius-md); overflow: hidden; }
+      .gallery img { width: 100%; aspect-ratio: 3 / 3.8; object-fit: cover; transition: transform 0.45s var(--ease-out); }
+      .gallery figure:hover img { transform: scale(1.04); }
+      .gallery figcaption {
+        position: absolute; inset: auto 0 0 0;
+        padding: 2.2rem 1rem 0.85rem;
+        background: linear-gradient(180deg, rgba(19, 35, 26, 0) 0%, rgba(19, 35, 26, 0.72) 100%);
+        color: var(--cream); font-size: 0.85rem; font-weight: 600;
+      }
+
+      /* ============ Packs ============ */
+      .packs { background: var(--cream-2); }
+      .packs-grid {
+        display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.4rem; max-width: 880px; margin-inline: auto;
+        align-items: stretch;
+      }
+      @media (max-width: 760px) { .packs-grid { grid-template-columns: 1fr; } }
+      .pack-card {
+        position: relative;
+        display: flex; flex-direction: column;
+        background: var(--white);
+        border: 1.5px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 2rem 1.8rem;
+        box-shadow: var(--shadow-soft);
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+      .pack-card:hover { box-shadow: var(--shadow-lift); }
+      .pack-card.is-featured { border-color: var(--lilac-800); }
+      .pack-flag {
+        position: absolute; top: -13px; left: 1.6rem;
+        background: var(--lilac-800); color: #fff;
+        font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+        padding: 0.32rem 0.8rem; border-radius: var(--radius-pill);
+      }
+      .pack-card h3 { font-size: 1.45rem; }
+      .pack-desc { margin-top: 0.5rem; font-size: 0.95rem; color: var(--text-soft); }
+      .pack-price { margin-top: 1.3rem; display: flex; align-items: baseline; gap: 0.45rem; }
+      .pack-price strong { font-family: var(--font-display); font-size: 2.3rem; font-weight: 600; color: var(--ink); letter-spacing: -0.02em; }
+      .pack-price span { font-size: 0.88rem; color: var(--text-soft); font-weight: 600; }
+      .pack-features { margin-top: 1.4rem; padding-top: 1.4rem; border-top: 1px solid var(--border); display: grid; gap: 0.75rem; flex-grow: 1; align-content: start; }
+      .pack-features li { display: flex; align-items: flex-start; gap: 0.65rem; font-size: 0.95rem; }
+      .pack-features svg { width: 19px; height: 19px; color: var(--lilac-800); flex-shrink: 0; margin-top: 2px; }
+      .pack-card .btn { margin-top: 1.7rem; width: 100%; }
+
+      .b2b-banner {
+        max-width: 880px; margin: 1.4rem auto 0;
+        display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem;
+        background: var(--green-900);
+        border-radius: var(--radius-lg);
+        padding: 1.6rem 1.8rem;
+        color: var(--cream);
+      }
+      .b2b-banner h3 { color: var(--cream); font-size: 1.25rem; }
+      .b2b-banner p { margin-top: 0.35rem; font-size: 0.93rem; color: rgba(250, 246, 239, 0.8); max-width: 52ch; }
+
+      /* ============ Depoimentos ============ */
+      .testimonials { background: var(--cream); }
+      .testimonials-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem; }
+      @media (max-width: 760px) { .testimonials-grid { grid-template-columns: 1fr; } }
+      .t-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 1.7rem 1.6rem;
+        display: flex; flex-direction: column; gap: 1.1rem;
+        box-shadow: var(--shadow-soft);
+      }
+      .t-card svg.quote { width: 26px; height: 26px; color: var(--lilac-300); }
+      .t-card blockquote { font-family: var(--font-display); font-size: 1.18rem; line-height: 1.45; color: var(--ink); flex-grow: 1; }
+      .t-meta { display: flex; align-items: center; gap: 0.7rem; }
+      .t-avatar {
+        width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0;
+        display: inline-flex; align-items: center; justify-content: center;
+        background: var(--lilac-100); color: var(--lilac-800);
+        font-weight: 700; font-size: 0.95rem;
+      }
+      .t-meta strong { display: block; font-size: 0.92rem; color: var(--ink); line-height: 1.3; }
+      .t-meta span { font-size: 0.82rem; color: var(--text-soft); }
+
+      /* ============ CTA final ============ */
+      .cta-final {
+        background:
+          radial-gradient(85% 80% at 92% 0%, rgba(166, 107, 234, 0.2) 0%, rgba(166, 107, 234, 0) 52%),
+          radial-gradient(70% 90% at 5% 100%, rgba(215, 240, 91, 0.12) 0%, rgba(215, 240, 91, 0) 50%),
+          var(--green-950);
+        color: var(--cream);
+        text-align: center;
+      }
+      .cta-final h2 { color: var(--cream); font-size: clamp(2rem, 4.2vw, 3.1rem); max-width: 20ch; margin-inline: auto; }
+      .cta-final h2 em { font-style: italic; color: var(--lime); }
+      .cta-final p { margin: 1.2rem auto 0; max-width: 50ch; color: rgba(250, 246, 239, 0.82); }
+      .cta-final-actions { margin-top: 2.2rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; }
+
+      /* ============ Footer ============ */
+      .site-footer { background: var(--cream); border-top: 1px solid var(--border); }
+      .footer-grid {
+        padding: clamp(3rem, 6vw, 4.5rem) 0 2.5rem;
+        display: grid; grid-template-columns: 1.3fr 0.7fr 1fr; gap: 2.5rem;
+      }
+      @media (max-width: 860px) { .footer-grid { grid-template-columns: 1fr; gap: 2rem; } }
+      .footer-tagline { margin-top: 1rem; max-width: 36ch; font-size: 0.95rem; color: var(--text-soft); }
+      .footer-heading { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--ink); margin-bottom: 1.1rem; }
+      .footer-links { display: grid; gap: 0.6rem; }
+      .footer-links a { font-size: 0.95rem; color: var(--text-soft); transition: color 0.2s ease; }
+      .footer-links a:hover { color: var(--lilac-800); }
+      .footer-contact-list { display: grid; gap: 0.9rem; }
+      .footer-contact-list li { display: flex; align-items: flex-start; gap: 0.7rem; font-size: 0.95rem; }
+      .footer-contact-list svg { width: 19px; height: 19px; color: var(--lilac-800); flex-shrink: 0; margin-top: 3px; }
+      .footer-contact-list a:hover { color: var(--lilac-800); }
+      .footer-bottom {
+        border-top: 1px solid var(--border);
+        padding: 1.3rem 0 1.6rem;
+        display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 1.5rem;
+        font-size: 0.85rem; color: var(--text-soft);
+      }
+
+      /* ============ WhatsApp flutuante ============ */
+      .wa-float {
+        position: fixed; right: 1.2rem; bottom: 1.2rem; z-index: 60;
+        width: 56px; height: 56px;
+        display: inline-flex; align-items: center; justify-content: center;
+        background: #25d366; color: #fff;
+        border-radius: 50%;
+        box-shadow: 0 14px 30px rgba(19, 35, 26, 0.3);
+        opacity: 0; transform: translateY(14px); pointer-events: none;
+        transition: opacity 0.3s ease, transform 0.3s var(--ease-out), background-color 0.2s ease;
+      }
+      .wa-float.is-visible { opacity: 1; transform: none; pointer-events: auto; }
+      .wa-float:hover { background: #1fbf5b; }
+      .wa-float svg { width: 28px; height: 28px; }
+
+      /* ============ Reveal on scroll ============ */
+      .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.65s var(--ease-out), transform 0.65s var(--ease-out); }
+      .reveal.in { opacity: 1; transform: none; }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; }
+        .reveal { opacity: 1; transform: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header" id="topo">
+      <div class="header-inner">
+        <a class="brand" href="#topo" aria-label="aflora.club — início">
+          <img src="images/logo.png" alt="" width="44" height="44" />
+          <span class="brand-name">aflora<span>.club</span></span>
+        </a>
+        <nav class="main-nav" id="menu" aria-label="Navegação principal">
+          <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#como-funciona">Como funciona</a></li>
+            <li><a href="#packs">Packs</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <li class="nav-cta-mobile">
+              <a class="btn btn-primary" href="https://wa.me/5551997229661?text=Ol%C3%A1%21%20Quero%20fazer%20uma%20encomenda%20com%20a%20Aflora%20Club." target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Pedir pelo WhatsApp
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header-cta">
+          <a class="btn btn-primary" href="https://wa.me/5551997229661?text=Ol%C3%A1%21%20Quero%20fazer%20uma%20encomenda%20com%20a%20Aflora%20Club." target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Pedir pelo WhatsApp
+          </a>
+        </div>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+          <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+          <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <!-- ============ Hero ============ -->
+      <section class="hero on-dark" aria-labelledby="hero-titulo">
+        <div class="wrap hero-grid">
+          <div>
+            <p class="eyebrow">Porto Alegre · Colheita sob demanda</p>
+            <h1 class="hero-title" id="hero-titulo">Frescor de fazenda, <em>conceito de cidade</em></h1>
+            <p class="hero-lede">Flores comestíveis e PANCs cultivadas sob demanda para restaurantes, cafés, confeitarias e hotéis que tratam cada prato como uma experiência memorável.</p>
+            <div class="hero-actions">
+              <a class="btn btn-lime" href="https://wa.me/5551997229661?text=Ol%C3%A1%21%20Quero%20fazer%20uma%20encomenda%20com%20a%20Aflora%20Club." target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Pedir pelo WhatsApp
+              </a>
+              <a class="btn btn-ghost" href="#packs">Conhecer os packs</a>
+            </div>
+            <ul class="hero-trust">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22a9 9 0 0 0 9-9c0-5-4-9-9-11C7 4 3 8 3 13a9 9 0 0 0 9 9Z"/><path d="M12 22V8"/><path d="M12 13c2.5-1 4-3 4.5-5"/></svg>
+                Colheita após o pedido
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                100% agroecológico
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Entrega em Porto Alegre
+              </li>
+            </ul>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-frame" id="carrossel" role="group" aria-roledescription="carrossel" aria-label="Pratos e drinks finalizados com flores da Aflora Club">
+              <div class="carousel-slide is-active"><img src="images/novas/hero1-sq.jpg" alt="Prato de pappardelle finalizado com flores comestíveis da Aflora Club" fetchpriority="high" /></div>
+              <div class="carousel-slide"><img src="images/deepthi-clicks-6etgAmZraLQ-unsplash-pequena.jpg" alt="Drink autoral com espuma decorado com tagete comestível da Aflora Club" loading="lazy" /></div>
+              <div class="carousel-slide"><img src="images/novas/IMG_5036_sq.jpg" alt="Ostras no gelo decoradas com flores comestíveis da Aflora Club" loading="lazy" /></div>
+              <div class="carousel-dots" role="tablist" aria-label="Escolher imagem do carrossel"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Sobre ============ -->
+      <section class="section about" id="sobre" aria-labelledby="sobre-titulo">
+        <div class="wrap about-grid">
+          <div class="about-media reveal">
+            <img class="about-photo-main" src="images/novas/sobre-bandeja-3x4.jpg" alt="Mão segurando bandeja de palha repleta de flores comestíveis coloridas na horta" loading="lazy" />
+            <img class="about-photo-float" src="images/novas/sobre-1.jpg" alt="Pack transparente com mix de flores comestíveis recém-colhidas" loading="lazy" />
+            <span class="about-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22a9 9 0 0 0 9-9c0-5-4-9-9-11C7 4 3 8 3 13a9 9 0 0 0 9 9Z"/></svg>
+              Cultivo próprio
+            </span>
+          </div>
+          <div class="reveal">
+            <p class="eyebrow">Sobre a Aflora</p>
+            <h2 class="section-title" id="sobre-titulo">Cultivo técnico com sensibilidade gastronômica</h2>
+            <p class="about-text">A Aflora Club foi criada por dois especialistas em agricultura urbana, combinando ciências agrárias e paixão por agricultura sustentável.</p>
+            <p class="about-text">As flores são colhidas somente após o pedido, para chegar no auge de frescor e beleza em cozinhas criativas.</p>
+            <ul class="about-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                Sem adição de fertilizantes químicos
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                Práticas 100% agroecológicas de cultivo
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                Flores comestíveis e PANCs sazonais
+              </li>
+            </ul>
+            <p class="about-cta">
+              <a class="link-arrow" href="#contato">
+                Falar com a Aflora
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Como funciona ============ -->
+      <section class="section how" id="como-funciona" aria-labelledby="how-titulo">
+        <div class="wrap">
+          <div class="section-head center reveal">
+            <p class="eyebrow">Como funciona</p>
+            <h2 class="section-title" id="how-titulo">Do pedido ao prato em três passos</h2>
+            <p class="section-sub">Um processo simples, pensado para a rotina de cozinhas profissionais.</p>
+          </div>
+          <div class="how-grid">
+            <article class="how-card reveal">
+              <span class="how-step">Passo 01</span>
+              <span class="how-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>
+              </span>
+              <h3>Você faz o pedido</h3>
+              <p>Escolha o pack ideal e envie sua encomenda pelo WhatsApp ou e-mail. Respondemos rápido para confirmar espécies e quantidades.</p>
+            </article>
+            <article class="how-card reveal">
+              <span class="how-step">Passo 02</span>
+              <span class="how-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22a9 9 0 0 0 9-9c0-5-4-9-9-11C7 4 3 8 3 13a9 9 0 0 0 9 9Z"/><path d="M12 22V8"/><path d="M12 13c2.5-1 4-3 4.5-5"/></svg>
+              </span>
+              <h3>Colhemos sob demanda</h3>
+              <p>Suas flores só saem da horta depois da confirmação do pedido — nada de estoque parado ou flor murcha.</p>
+            </article>
+            <article class="how-card reveal">
+              <span class="how-step">Passo 03</span>
+              <span class="how-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <h3>Entregamos no frescor</h3>
+              <p>Atendemos toda Porto Alegre, com frete calculado por quilometragem. As flores chegam no auge da beleza, prontas para o serviço.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Galeria ============ -->
+      <section class="gallery-section" aria-labelledby="galeria-titulo">
+        <div class="wrap">
+          <div class="section-head reveal" style="margin-bottom: 1.8rem;">
+            <p class="eyebrow">Da horta para o prato</p>
+            <h2 class="section-title" id="galeria-titulo">Flores que viram experiência</h2>
+          </div>
+        </div>
+        <div class="wrap">
+          <div class="gallery" role="region" aria-label="Galeria de pratos e drinks com flores comestíveis — role horizontalmente" tabindex="0">
+            <figure>
+              <img src="images/novas/sobre-1.jpg" alt="Pack transparente com mix colorido de flores comestíveis" loading="lazy" />
+              <figcaption>Mix sazonal recém-colhido</figcaption>
+            </figure>
+            <figure>
+              <img src="images/novas/IMG_4573.JPG" alt="Pappardelle com pétalas de centáurea, calêndula e ervas frescas" loading="lazy" />
+              <figcaption>Massas autorais</figcaption>
+            </figure>
+            <figure>
+              <img src="images/novas/IMG_4167.JPG" alt="Drink rosé com flores congeladas em esfera de gelo" loading="lazy" />
+              <figcaption>Coquetelaria criativa</figcaption>
+            </figure>
+            <figure>
+              <img src="images/novas/IMG_4187.JPG" alt="Carpaccio de salmão decorado com borago e flores brancas" loading="lazy" />
+              <figcaption>Entradas e pratos frios</figcaption>
+            </figure>
+            <figure>
+              <img src="images/novas/IMG_4168.JPG" alt="Sobremesa de panna cotta rosa com flores e pétalas desidratadas" loading="lazy" />
+              <figcaption>Confeitaria e sobremesas</figcaption>
+            </figure>
+            <figure>
+              <img src="images/novas/IMG_4714.JPG" alt="Toasts com creme e pétalas alaranjadas em louça artesanal" loading="lazy" />
+              <figcaption>Brunchs e cafés</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Packs ============ -->
+      <section class="section packs" id="packs" aria-labelledby="packs-titulo">
+        <div class="wrap">
+          <div class="section-head center reveal">
+            <p class="eyebrow">Packs</p>
+            <h2 class="section-title" id="packs-titulo">Escolha seu pack</h2>
+            <p class="section-sub">Flores comestíveis e PANCs sem adição de fertilizantes químicos, com práticas 100% agroecológicas de cultivo.</p>
+          </div>
+          <div class="packs-grid">
+            <article class="pack-card is-featured reveal">
+              <span class="pack-flag">Mais pedido</span>
+              <h3>Mix de flores sazonais</h3>
+              <p class="pack-desc">A seleção da estação, colhida no ponto ideal para o seu serviço.</p>
+              <p class="pack-price"><strong>R$ 20</strong><span>por pack</span></p>
+              <ul class="pack-features">
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                  Cerca de 30 flores sortidas
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                  Variedade de cores e espécies da estação
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                  Colhido somente após o pedido
+                </li>
+              </ul>
+              <a class="btn btn-primary" href="https://wa.me/5551997229661?text=Ol%C3%A1%21%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20Mix%20de%20Flores%20Sazonais." target="_blank" rel="noopener noreferrer">Pedir o Mix sazonal</a>
+            </article>
+            <article class="pack-card reveal">
+              <h3>Pack personalizado</h3>
+              <p class="pack-desc">Você escolhe as espécies dentro do catálogo disponível.</p>
+              <p class="pack-price"><strong>R$ 22</strong><span>por pack</span></p>
+              <ul class="pack-features">
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                  Monte o pack do seu jeito
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                  Ex.: somente flores rosas, somente tagete
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                  Ideal para identidade visual do cardápio
+                </li>
+              </ul>
+              <a class="btn btn-primary" href="https://wa.me/5551997229661?text=Ol%C3%A1%21%20Quero%20montar%20um%20Pack%20personalizado%20%28R%24%2022%2C00%29.%20Pode%20me%20ajudar%20com%20as%20esp%C3%A9cies%20dispon%C3%ADveis%3F" target="_blank" rel="noopener noreferrer">Montar pack personalizado</a>
+            </article>
+          </div>
+          <div class="b2b-banner on-dark reveal">
+            <div>
+              <h3>Condições especiais B2B</h3>
+              <p>Para pedidos fixos semanais ou acima de 4 packs, restaurantes, cafés e hotéis contam com condições diferenciadas.</p>
+            </div>
+            <a class="btn btn-lime" href="https://wa.me/5551997229661?text=Ol%C3%A1%21%20Tenho%20interesse%20nas%20condi%C3%A7%C3%B5es%20B2B%20da%20Aflora%20Club." target="_blank" rel="noopener noreferrer">Falar sobre B2B</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Depoimentos ============ -->
+      <section class="section testimonials" id="depoimentos" aria-labelledby="depo-titulo">
+        <div class="wrap">
+          <div class="section-head center reveal">
+            <p class="eyebrow">Depoimentos</p>
+            <h2 class="section-title" id="depo-titulo">Quem recebe, floresce</h2>
+            <p class="section-sub">Mensagens reais de clientes recebidas pelo Instagram e WhatsApp.</p>
+          </div>
+          <div class="testimonials-grid">
+            <article class="t-card reveal">
+              <svg class="quote" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 8c-3 0-5 2.2-5 5.3 0 2.6 1.8 4.7 4.3 4.7 2.1 0 3.7-1.6 3.7-3.7 0-2-1.4-3.4-3.3-3.4-.3 0-.7 0-1 .2.5-1.3 1.7-2.3 3.3-2.6V6c-.7 0-1.4.6-2 2Zm9 0c-3 0-5 2.2-5 5.3 0 2.6 1.8 4.7 4.3 4.7 2.1 0 3.7-1.6 3.7-3.7 0-2-1.4-3.4-3.3-3.4-.3 0-.7 0-1 .2.5-1.3 1.7-2.3 3.3-2.6V6c-.7 0-1.4.6-2 2Z"/></svg>
+              <blockquote>“As flores mais perfeitas. Sempre.”</blockquote>
+              <div class="t-meta">
+                <span class="t-avatar" aria-hidden="true">F</span>
+                <div>
+                  <strong>@florisbolo</strong>
+                  <span>via Instagram</span>
+                </div>
+              </div>
+            </article>
+            <article class="t-card reveal">
+              <svg class="quote" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 8c-3 0-5 2.2-5 5.3 0 2.6 1.8 4.7 4.3 4.7 2.1 0 3.7-1.6 3.7-3.7 0-2-1.4-3.4-3.3-3.4-.3 0-.7 0-1 .2.5-1.3 1.7-2.3 3.3-2.6V6c-.7 0-1.4.6-2 2Zm9 0c-3 0-5 2.2-5 5.3 0 2.6 1.8 4.7 4.3 4.7 2.1 0 3.7-1.6 3.7-3.7 0-2-1.4-3.4-3.3-3.4-.3 0-.7 0-1 .2.5-1.3 1.7-2.3 3.3-2.6V6c-.7 0-1.4.6-2 2Z"/></svg>
+              <blockquote>“As flores são lindas! Deixei a noite na geladeira e acordaram iguais. Amei todas as cores — com certeza vou querer pedir mais vezes.”</blockquote>
+              <div class="t-meta">
+                <span class="t-avatar" aria-hidden="true">C</span>
+                <div>
+                  <strong>Cliente Aflora</strong>
+                  <span>via WhatsApp</span>
+                </div>
+              </div>
+            </article>
+            <article class="t-card reveal">
+              <svg class="quote" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 8c-3 0-5 2.2-5 5.3 0 2.6 1.8 4.7 4.3 4.7 2.1 0 3.7-1.6 3.7-3.7 0-2-1.4-3.4-3.3-3.4-.3 0-.7 0-1 .2.5-1.3 1.7-2.3 3.3-2.6V6c-.7 0-1.4.6-2 2Zm9 0c-3 0-5 2.2-5 5.3 0 2.6 1.8 4.7 4.3 4.7 2.1 0 3.7-1.6 3.7-3.7 0-2-1.4-3.4-3.3-3.4-.3 0-.7 0-1 .2.5-1.3 1.7-2.3 3.3-2.6V6c-.7 0-1.4.6-2 2Z"/></svg>
+              <blockquote>“Dias de chegada de flores são sempre os mais felizes.”</blockquote>
+              <div class="t-meta">
+                <span class="t-avatar" aria-hidden="true">A</span>
+                <div>
+                  <strong>@angelicapoa</strong>
+                  <span>via Instagram</span>
+                </div>
+              </div>
+            </article>
+            <article class="t-card reveal">
+              <svg class="quote" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 8c-3 0-5 2.2-5 5.3 0 2.6 1.8 4.7 4.3 4.7 2.1 0 3.7-1.6 3.7-3.7 0-2-1.4-3.4-3.3-3.4-.3 0-.7 0-1 .2.5-1.3 1.7-2.3 3.3-2.6V6c-.7 0-1.4.6-2 2Zm9 0c-3 0-5 2.2-5 5.3 0 2.6 1.8 4.7 4.3 4.7 2.1 0 3.7-1.6 3.7-3.7 0-2-1.4-3.4-3.3-3.4-.3 0-.7 0-1 .2.5-1.3 1.7-2.3 3.3-2.6V6c-.7 0-1.4.6-2 2Z"/></svg>
+              <blockquote>“Amei as flores, guria! A gente tá muito feliz.”</blockquote>
+              <div class="t-meta">
+                <span class="t-avatar" aria-hidden="true">C</span>
+                <div>
+                  <strong>Cliente Aflora</strong>
+                  <span>via WhatsApp</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CTA final ============ -->
+      <section class="section cta-final on-dark" aria-labelledby="cta-titulo">
+        <div class="wrap reveal">
+          <h2 id="cta-titulo">Vamos colocar flores no seu <em>cardápio</em>?</h2>
+          <p>Encomende pelo WhatsApp para resposta rápida, ou envie um e-mail para pedidos detalhados.</p>
+          <div class="cta-final-actions">
+            <a class="btn btn-lime" href="https://wa.me/5551997229661?text=Ol%C3%A1%21%20Quero%20fazer%20uma%20encomenda%20com%20a%20Aflora%20Club." target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Pedir pelo WhatsApp
+            </a>
+            <a class="btn btn-ghost" href="mailto:olaahflora@gmail.com">Enviar e-mail</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ Footer ============ -->
+    <footer class="site-footer" id="contato">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div>
+            <a class="brand" href="#topo" aria-label="aflora.club — voltar ao topo">
+              <img src="images/logo.png" alt="" width="44" height="44" loading="lazy" />
+              <span class="brand-name">aflora<span>.club</span></span>
+            </a>
+            <p class="footer-tagline">Colheita sob demanda para cozinhas que tratam ingredientes com técnica e sensibilidade.</p>
+          </div>
+          <nav aria-label="Navegação do rodapé">
+            <p class="footer-heading">Navegação</p>
+            <ul class="footer-links">
+              <li><a href="#sobre">Sobre</a></li>
+              <li><a href="#como-funciona">Como funciona</a></li>
+              <li><a href="#packs">Packs</a></li>
+              <li><a href="#depoimentos">Depoimentos</a></li>
+            </ul>
+          </nav>
+          <div>
+            <p class="footer-heading">Encomendas e contato</p>
+            <ul class="footer-contact-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                <a href="https://wa.me/5551997229661" target="_blank" rel="noopener noreferrer">(51) 99722-9661 — resposta rápida</a>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                <a href="mailto:olaahflora@gmail.com">olaahflora@gmail.com</a>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Toda Porto Alegre — frete por quilometragem, consulte.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© <span id="ano">2026</span> Aflora Club · Porto Alegre</p>
+          <p>Flores comestíveis e PANCs sob demanda</p>
+        </div>
+      </div>
+    </footer>
+
+    <a class="wa-float" href="https://wa.me/5551997229661?text=Ol%C3%A1%21%20Quero%20fazer%20uma%20encomenda%20com%20a%20Aflora%20Club." target="_blank" rel="noopener noreferrer" aria-label="Conversar com a Aflora Club no WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <script>
+      (function () {
+        "use strict";
+        var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+        /* Header: sombra ao rolar + botão flutuante do WhatsApp */
+        var header = document.querySelector(".site-header");
+        var waFloat = document.querySelector(".wa-float");
+        function onScroll() {
+          header.classList.toggle("is-scrolled", window.scrollY > 8);
+          waFloat.classList.toggle("is-visible", window.scrollY > 560);
+        }
+        window.addEventListener("scroll", onScroll, { passive: true });
+        onScroll();
+
+        /* Menu mobile */
+        var toggle = document.querySelector(".nav-toggle");
+        var nav = document.getElementById("menu");
+        function closeMenu() {
+          nav.classList.remove("is-open");
+          toggle.setAttribute("aria-expanded", "false");
+          toggle.setAttribute("aria-label", "Abrir menu");
+        }
+        toggle.addEventListener("click", function () {
+          var open = nav.classList.toggle("is-open");
+          toggle.setAttribute("aria-expanded", String(open));
+          toggle.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+        });
+        nav.addEventListener("click", function (e) {
+          if (e.target.closest("a")) closeMenu();
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && nav.classList.contains("is-open")) {
+            closeMenu();
+            toggle.focus();
+          }
+        });
+
+        /* Carrossel do hero: indicadores acessíveis + autoplay com pausa */
+        var frame = document.getElementById("carrossel");
+        if (frame) {
+          var slides = frame.querySelectorAll(".carousel-slide");
+          var dotsBox = frame.querySelector(".carousel-dots");
+          var current = 0;
+          var timer = null;
+          var dots = [];
+
+          function show(i) {
+            slides[current].classList.remove("is-active");
+            dots[current].setAttribute("aria-current", "false");
+            current = i;
+            slides[current].classList.add("is-active");
+            dots[current].setAttribute("aria-current", "true");
+          }
+          function next() { show((current + 1) % slides.length); }
+          function play() {
+            if (reducedMotion.matches || timer) return;
+            timer = window.setInterval(next, 7000);
+          }
+          function pause() {
+            if (timer) { window.clearInterval(timer); timer = null; }
+          }
+
+          slides.forEach(function (_, i) {
+            var dot = document.createElement("button");
+            dot.className = "carousel-dot";
+            dot.type = "button";
+            dot.setAttribute("aria-label", "Ir para imagem " + (i + 1) + " de " + slides.length);
+            dot.setAttribute("aria-current", i === 0 ? "true" : "false");
+            dot.addEventListener("click", function () { show(i); pause(); play(); });
+            dotsBox.appendChild(dot);
+            dots.push(dot);
+          });
+
+          frame.addEventListener("mouseenter", pause);
+          frame.addEventListener("mouseleave", play);
+          frame.addEventListener("focusin", pause);
+          frame.addEventListener("focusout", play);
+          document.addEventListener("visibilitychange", function () {
+            if (document.hidden) pause(); else play();
+          });
+          play();
+        }
+
+        /* Revelação ao rolar */
+        var revealEls = document.querySelectorAll(".reveal");
+        if (!reducedMotion.matches && "IntersectionObserver" in window) {
+          var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("in");
+                io.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+          revealEls.forEach(function (el) { io.observe(el); });
+        } else {
+          revealEls.forEach(function (el) { el.classList.add("in"); });
+        }
+
+        /* Ano do rodapé */
+        var ano = document.getElementById("ano");
+        if (ano) ano.textContent = String(new Date().getFullYear());
+      })();
+    </script>
+  </body>
+</html>

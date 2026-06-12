@@ -37,8 +37,6 @@
       .hero-v11__slide { opacity: 0; transition: opacity 0.8s ease; }
       .hero-v11__slide.is-active { opacity: 1; }
       .hero-v11__slide img { width: 100%; height: 100%; object-fit: cover; }
-      .hero-v11__slide.is-fit::before { content: ""; position: absolute; inset: 0; z-index: 0; background: url("images/novas/cody-sq.jpg") center / cover no-repeat; filter: blur(34px) saturate(1.05); transform: scale(1.18); opacity: 0.5; }
-      .hero-v11__slide.is-fit img { position: relative; z-index: 1; object-fit: contain; transform: scale(1.04); }
       @keyframes heroV11ClipOut { from { clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%); } to { clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%); } }
       .hero-v11-reveal { opacity: 0; transform: translate3d(0, 16px, 0); animation: reveal 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
       .delay-1 { animation-delay: 0.2s; } .delay-2 { animation-delay: 0.4s; } .delay-3 { animation-delay: 0.55s; }
@@ -80,11 +78,11 @@
       .about-section { background: #eef5e7; color: #234527; border-top: 1px solid rgba(35, 69, 39, 0.1); overflow: hidden; }
       .about-wrap { width: min(1320px, calc(100% - 3rem)); margin: 0 auto; padding: clamp(3.5rem, 8vw, 6rem) 0; display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(2rem, 6vw, 5rem); align-items: center; }
       @media (max-width: 980px) { .about-wrap { grid-template-columns: 1fr; } }
-      .about-media { position: relative; min-height: clamp(360px, 44vw, 620px); }
+      .about-media { position: relative; min-height: clamp(420px, 50vw, 700px); }
       .about-photo { position: absolute; border-radius: 1rem; border: 9px solid #fff; box-shadow: 0 22px 45px rgba(25, 22, 31, 0.28); object-fit: cover; }
-      .about-photo--one { width: clamp(200px, 28vw, 346px); aspect-ratio: 3 / 4; left: 6%; bottom: 4%; transform: rotate(-15deg) translate3d(var(--parallax-x, 0px), var(--parallax-y, 0px), 0); }
-      .about-photo--two { width: clamp(186px, 25vw, 306px); aspect-ratio: 3 / 4; left: 24%; top: -1%; z-index: 2; transform: rotate(8deg) translate3d(var(--parallax-x, 0px), var(--parallax-y, 0px), 0); }
-      .about-photo--three { width: clamp(191px, 27vw, 328px); aspect-ratio: 3 / 4; right: 12%; bottom: 6%; transform: rotate(12deg) translate3d(var(--parallax-x, 0px), var(--parallax-y, 0px), 0); }
+      .about-photo--one { width: clamp(200px, 28vw, 346px); aspect-ratio: 3 / 4; left: -2%; bottom: 0%; transform: rotate(-15deg) translate3d(var(--parallax-x, 0px), var(--parallax-y, 0px), 0); }
+      .about-photo--two { width: clamp(186px, 25vw, 306px); aspect-ratio: 3 / 4; left: 28%; top: -3%; z-index: 2; transform: rotate(8deg) translate3d(var(--parallax-x, 0px), var(--parallax-y, 0px), 0); }
+      .about-photo--three { width: clamp(191px, 27vw, 328px); aspect-ratio: 3 / 4; right: 4%; bottom: 2%; transform: rotate(12deg) translate3d(var(--parallax-x, 0px), var(--parallax-y, 0px), 0); }
       .about-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3.4vw, 3rem); line-height: 1.06; color: #182f1d; text-align: center; }
       .about-text { margin-top: 1rem; line-height: 1.66; color: rgba(35, 69, 39, 0.88); text-align: center; }
       .about-cta { margin: 1.8rem auto 0; display: flex; width: fit-content; padding: 0.78rem 1.2rem; border-radius: 999px; background: #c768f1; color: #fff; border: 1px solid rgba(120, 40, 160, 0.35); font-family: var(--font-display); text-transform: uppercase; font-size: 0.74rem; letter-spacing: 0.1em; }
@@ -210,8 +208,8 @@
       <div class="hero-v11__visual" aria-label="Imagens em destaque">
         <div class="hero-v11__carousel">
           <div class="hero-v11__slide is-active"><img src="images/novas/hero1-sq.jpg" alt="Prato de pappardelle finalizado com flores comestiveis da Aflora Club" fetchpriority="high" style="object-position: center;" /></div>
+          <div class="hero-v11__slide"><img src="images/deepthi-clicks-6etgAmZraLQ-unsplash-pequena.jpg" alt="Drink autoral com espuma decorado com tagetes comestivel da Aflora Club" loading="lazy" style="object-position: calc(50% + 50px) center;" /></div>
           <div class="hero-v11__slide"><img src="images/novas/IMG_5036_sq.jpg" alt="Ostras no gelo decoradas com flores comestiveis da Aflora Club" loading="lazy" style="object-position: 69% center;" /></div>
-          <div class="hero-v11__slide is-fit"><img src="images/novas/cody-sq.jpg" alt="Drink autoral decorado com cravina comestivel da Aflora Club" loading="lazy" style="object-position: center;" /></div>
         </div>
       </div>
     </section>
@@ -219,9 +217,9 @@
     <section class="about-section" id="sobre">
       <div class="about-wrap">
         <div class="about-media" aria-hidden="true">
-          <img class="about-photo about-photo--one" src="images/novas/sobre-1.jpg" alt="" loading="lazy" data-parallax="0.28" />
+          <img class="about-photo about-photo--one" src="images/novas/6c646e7c1ca2a6707449d471b772c522.jpg" alt="" loading="lazy" data-parallax="0.28" />
           <img class="about-photo about-photo--two" src="images/84BA5229-A515-4CAB-BAE3-8BA9A4F962D1_Original.JPG" alt="" loading="lazy" data-parallax="0.56" />
-          <img class="about-photo about-photo--three" src="images/novas/sobre-3.jpg" alt="" loading="lazy" data-parallax="0.82" />
+          <img class="about-photo about-photo--three" src="images/novas/sobre-bandeja-3x4.jpg" alt="" loading="lazy" data-parallax="0.82" />
         </div>
         <div>
           <h2 class="about-title">Cultivo técnico com sensibilidade gastronômica</h2>
@@ -341,7 +339,7 @@
           var vh = window.innerHeight;
           var rect = about.getBoundingClientRect();
           var denom = Math.max(vh + rect.height * 1.05, 1);
-          var u = clamp((vh * 0.55 - rect.top) / denom, -1, 1);
+          var u = clamp((vh * 0.55 - rect.top) / denom, -1, Math.min(1, rect.height / denom));
           var baseX = u * 220;
           var baseY = u * 85;
           for (var j = 0; j < photos.length; j++) {
